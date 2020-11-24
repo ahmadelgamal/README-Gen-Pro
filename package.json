@@ -1,0 +1,29 @@
+{
+  "name": "ucb-readme-generator",
+  "version": "1.0.0",
+  "description": "Command-line application to dynamically generate README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadelgamal/ucb-README-generator.git"
+  },
+  "keywords": [
+    "README.md",
+    "README"
+  ],
+  "author": "Ahmad El Gamal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmadelgamal/ucb-README-generator/issues"
+  },
+  "homepage": "https://github.com/ahmadelgamal/ucb-README-generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "nodemon": "^2.0.6"
+  }
+}
