@@ -20,7 +20,7 @@ const questions = [
   {
     type: 'input',
     name: 'description',
-    message: 'What is the project description (what, why & how)? (Required)',
+    message: 'Please input a brief description of the project (what, why & how)? (Required)',
     validate: userInput => {
       if (userInput) {
         return true;
@@ -58,8 +58,15 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'demo',
-    message: 'What is the relative path and file name of the demo file? This can be a screenshot or a gif animation. (Optional)',
+    name: 'screenshot',
+    message: 'What is the filename of the app screenshot/gif animation, including the file extension? It must be placed in `./assets/images/`. (Optional)',
+    default: 'Not available'
+  },
+  {
+    type: 'input',
+    name: 'video',
+    message: 'What is the filename of the video demo file, including the file extension? It must be placed in `./assets/videos/`. (Optional)',
+    default: 'Not available'
   },
   {
     type: 'input',
@@ -91,7 +98,8 @@ const questions = [
   {
     type: 'input',
     name: 'collaborators',
-    message: 'Please list all collaborators, if any, (Optional)'
+    message: 'Please list all collaborators, if any, (Optional)',
+    default: 'None'
   },
   {
     type: 'list-input',
@@ -102,7 +110,7 @@ const questions = [
       if (userInput) {
         return true;
       } else {
-        console.log('You need to enter the contribution guidelines!');
+        console.log('You need to choose a license!');
         return false;
       }
     }
@@ -111,22 +119,39 @@ const questions = [
     type: 'list-input',
     name: 'badges',
     message: 'Please select any badges you wish to add (Optional)',
-    choices: ['ISC', 'MIT', 'No License']
+    choices: ['ISC', 'MIT', 'No License'],
+    default: 'No badges'
   },
   {
     type: 'input',
     name: 'features',
-    message: 'What are the main features of the project? (Optional)'
+    message: 'What are the main features of the project? (Required)',
+    validate: userInput => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log('You need to enter the main features of the project!');
+        return false;
+      }
+    }
   },
   {
     type: 'input',
     name: 'contributing',
-    message: 'What are the contribution guidelines? (Optional)'
+    message: 'What are the contribution guidelines? (Optional)',
+    default: "No contributions neeeded."
   },
   {
     type: 'input',
     name: 'tests',
-    message: 'What are the test instructions? (Optional)'
+    message: 'What are the test instructions? (Optional)',
+    default: 'No tests available.'
+  },
+  {
+    type: 'input',
+    name: 'roadmap',
+    message: 'Would you like to list any future upgrades? (Optional)',
+    default: 'No roadmap available.'
   },
   {
     type: 'input',
@@ -181,7 +206,7 @@ function writeToFile(fileName, data) {
       resolve({
         ok: true,
       });
-      console.log('README.md created successfully!');
+      console.log('README.md created successfully. Please check the output folder!');
     });
   });
 };
@@ -194,7 +219,7 @@ function init() {
       return generateMarkdown(answers);
     })
     .then(markdownData => {
-      return writeToFile('README.md', markdownData);
+      return writeToFile('./output/README.md', markdownData);
     })
     .catch(error => {
       console.log(error);

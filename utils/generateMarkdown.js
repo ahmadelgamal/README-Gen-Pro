@@ -6,6 +6,20 @@ function generateMarkdown(data) {
   ## Description
   ${data.description}
   
+  ## Table of Contents
+  - [Deployment URL](#Deployment-URL)
+  - [Repo URL](#Repo-URL)
+  - [Demo](#Demo)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Credits](#Credits)
+  - [License](#License)
+  - [Badges](#Badges)
+  - [Contributing](#Contributing)
+  - [Tests](#Tests)
+  - [Roadmap](#Roadmap)
+  - [Questions](#Questions)
+
   ## Deployment URL
   ${data.deployment}
   
@@ -13,7 +27,11 @@ function generateMarkdown(data) {
   ${data.repo}
 
   ## Demo
-  ![App Demo](${data.demo})
+  ### Screenshot/Gif Animation
+  ![Screenshot/Gif Animation](./assets/images/${data.screenshot})
+
+  ### Video
+  ![Video Demo](./assets/videos/${data.video})
 
   ## Installation
   ${data.installation}
@@ -39,6 +57,9 @@ function generateMarkdown(data) {
   
   ## Tests
   ${data.tests}
+
+  ## Roadmap
+  ${data.roadmap}
   
   ## Questions
   Please send your questions and/or comments to:
