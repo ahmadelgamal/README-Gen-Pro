@@ -57,16 +57,24 @@ const questions = [
     }
   },
   {
+    type: 'confirm',
+    name: 'confirm-screenshot',
+    message: 'Would you like to include a gif animation/screenshot of the app?'
+  },
+  {
     type: 'input',
     name: 'screenshot',
-    message: 'What is the filename of the app screenshot/gif animation, including the file extension? It must be placed in `./assets/images/`. (Optional)',
-    default: 'Not available'
+    message: 'What is the filename of the app gif animation/screenshot, including the file extension? It must be placed in `./assets/images/`.'
+  },
+  {
+    type: 'confirm',
+    name: 'confirm-video',
+    message: 'Would you like to include a video demo?'
   },
   {
     type: 'input',
     name: 'video',
-    message: 'What is the filename of the video demo file, including the file extension? It must be placed in `./assets/videos/`. (Optional)',
-    default: 'Not available'
+    message: 'What is the filename of the video demo file, including the file extension? It must be placed in `./assets/videos/`.'
   },
   {
     type: 'input',
@@ -94,33 +102,37 @@ const questions = [
       }
     }
   },
-
   {
-    type: 'input',
+    type: 'confirm',
+    name: 'confirm-collaborators',
+    message: 'Would you like to include a collaborators section?'
+  },
+  {
+    type: 'list-input',
     name: 'collaborators',
-    message: 'Please list all collaborators, if any, (Optional)',
-    default: 'None'
+    message: 'Please list all collaborators'
+  },
+  {
+    type: 'confirm',
+    name: 'confirm-license',
+    message: 'Would you like to include a license section?'
   },
   {
     type: 'list-input',
     name: 'license',
-    message: 'Please select a license (Required)',
-    choices: ['ISC', 'MIT', 'No License'],
-    validate: userInput => {
-      if (userInput) {
-        return true;
-      } else {
-        console.log('You need to choose a license!');
-        return false;
-      }
-    }
+    message: 'Please select a license',
+    choices: ['ISC', 'MIT', 'No License']
+  },
+  {
+    type: 'confirm',
+    name: 'confirm-badges',
+    message: 'Would you like to include a badges section?'
   },
   {
     type: 'list-input',
     name: 'badges',
-    message: 'Please select any badges you wish to add (Optional)',
+    message: 'Please select the badges that you wish to add.',
     choices: ['ISC', 'MIT', 'No License'],
-    default: 'No badges'
   },
   {
     type: 'input',
@@ -136,22 +148,34 @@ const questions = [
     }
   },
   {
+    type: 'confirm',
+    name: 'confirm-contributing',
+    message: 'Would you like to include a contributing section?'
+  },
+  {
     type: 'input',
     name: 'contributing',
-    message: 'What are the contribution guidelines? (Optional)',
-    default: "No contributions neeeded."
+    message: 'What are the contribution guidelines?'
+  },
+  {
+    type: 'confirm',
+    name: 'confirm-tests',
+    message: 'Would you like to include a tests section?'
   },
   {
     type: 'input',
     name: 'tests',
-    message: 'What are the test instructions? (Optional)',
-    default: 'No tests available.'
+    message: 'What are the test instructions?'
+  },
+  {
+    type: 'confirm',
+    name: 'confirm-roadmap',
+    message: 'Would you like to include a roadmap section?'
   },
   {
     type: 'input',
     name: 'roadmap',
-    message: 'Would you like to list any future upgrades? (Optional)',
-    default: 'No roadmap available.'
+    message: 'What are the next steps and/or future upgrades?'
   },
   {
     type: 'input',
