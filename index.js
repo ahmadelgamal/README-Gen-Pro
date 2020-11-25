@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // array of questions for user
@@ -19,7 +20,7 @@ const questions = [
   {
     type: 'input',
     name: 'description',
-    message: 'What is the project description? (Required)',
+    message: 'What is the project description (what, why & how)? (Required)',
     validate: userInput => {
       if (userInput) {
         return true;
@@ -28,6 +29,37 @@ const questions = [
         return false;
       }
     }
+  },
+  {
+    type: 'input',
+    name: 'deployment',
+    message: 'What is the deployment link (URL)? (Required)',
+    validate: userInput => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log('You need to enter a link to the deployed application!');
+        return false;
+      }
+    }
+  },
+  {
+    type: 'input',
+    name: 'repo',
+    message: 'What is the Repo link (URL)? (Required)',
+    validate: userInput => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log('You need to enter a link to the repository!');
+        return false;
+      }
+    }
+  },
+  {
+    type: 'input',
+    name: 'demo',
+    message: 'What is the relative path and file name of the demo file? This can be a screenshot or a gif animation. (Optional)',
   },
   {
     type: 'input',
@@ -55,16 +87,17 @@ const questions = [
       }
     }
   },
+
+  {
+    type: 'input',
+    name: 'collaborators',
+    message: 'Please list all collaborators, if any, (Optional)'
+  },
   {
     type: 'list-input',
     name: 'license',
-    message: 'Please select a license (Optional)',
-    choices: ['ISC', 'MIT', 'No License']
-  },
-  {
-    type: 'input',
-    name: 'contribution',
-    message: 'What are the contribution guidelines? (Required)',
+    message: 'Please select a license (Required)',
+    choices: ['ISC', 'MIT', 'No License'],
     validate: userInput => {
       if (userInput) {
         return true;
@@ -75,9 +108,25 @@ const questions = [
     }
   },
   {
+    type: 'list-input',
+    name: 'badges',
+    message: 'Please select any badges you wish to add (Optional)',
+    choices: ['ISC', 'MIT', 'No License']
+  },
+  {
     type: 'input',
-    name: 'test',
-    message: 'What are the test instructions? (Optional)',
+    name: 'features',
+    message: 'What are the main features of the project? (Optional)'
+  },
+  {
+    type: 'input',
+    name: 'contributing',
+    message: 'What are the contribution guidelines? (Optional)'
+  },
+  {
+    type: 'input',
+    name: 'tests',
+    message: 'What are the test instructions? (Optional)'
   },
   {
     type: 'input',
@@ -121,18 +170,18 @@ const questions = [
 ];
 
 // function to write README file
-function writeToFile(pageMarkdown) {
+function writeToFile(fileName, data) {
   return new Promise((resolve, reject) => {
-    fs.writeToFile('./output/README.md', data, error => {
-      if (error) {
-        reject(error);
-        return;
+    fs.writeFile(fileName, data, err => {
+      if (err) {
+        reject(err); // calling `reject` will cause the promise to fail with or without the error passed as an argument
+        return; // return will stop the function
       }
 
       resolve({
         ok: true,
-        message: 'README.md created!'
       });
+      console.log('README.md created successfully!');
     });
   });
 };
@@ -141,11 +190,11 @@ function writeToFile(pageMarkdown) {
 function init() {
   inquirer
     .prompt(questions)
-    .then(readmeData => {
-      return generateMarkdown(readmeData);
+    .then(answers => {
+      return generateMarkdown(answers);
     })
-    .then(pageMarkdown => {
-      return writeToFile(pageMarkdown);
+    .then(markdownData => {
+      return writeToFile('README.md', markdownData);
     })
     .catch(error => {
       console.log(error);

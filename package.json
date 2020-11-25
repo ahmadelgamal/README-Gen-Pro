@@ -1,7 +1,7 @@
 {
   "name": "ucb-readme-generator",
   "version": "1.0.0",
-  "description": "Command-line application to dynamically generate README.md",
+  "description": "A command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,8 +13,12 @@
     "url": "git+https://github.com/ahmadelgamal/ucb-README-generator.git"
   },
   "keywords": [
+    "inquirer",
     "README.md",
-    "README"
+    "README",
+    "command-line",
+    "interface",
+    "CLI"
   ],
   "author": "Ahmad El Gamal",
   "license": "MIT",
@@ -23,7 +27,6 @@
   },
   "homepage": "https://github.com/ahmadelgamal/ucb-README-generator#readme",
   "dependencies": {
-    "inquirer": "^7.3.3",
-    "nodemon": "^2.0.6"
+    "inquirer": "^7.3.3"
   }
 }

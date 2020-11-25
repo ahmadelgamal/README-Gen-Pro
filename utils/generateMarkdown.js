@@ -3,21 +3,48 @@ function generateMarkdown(data) {
   return `
   # ${data.title}
   
-  ## ${data.description}
+  ## Description
+  ${data.description}
   
-  ## ${data.installation}
+  ## Deployment URL
+  ${data.deployment}
   
-  ## ${data.usage}
+  ## Repo URL
+  ${data.repo}
+
+  ## Demo
+  ![App Demo](${data.demo})
+
+  ## Installation
+  ${data.installation}
   
-  ## ${data.license}
+  ## Usage
+  ${data.usage}
   
-  ## ${data.contribution}
+  ## Credits
+  ### Collaborators
+  ${data.collaborators}
+    
+  ## License
+  ${data.license}
   
-  ## ${data.test}
+  ## Badges
+  ${data.badges}
   
-  ### ${data.name}
-  ### ${data.username}
-  ### ${data.email}
+  ## Features
+  ${data.features}
+  
+  ## Contributing
+  ${data.contributing}
+  
+  ## Tests
+  ${data.tests}
+  
+  ## Questions
+  Please send your questions and/or comments to:
+  - ${data.name}
+  - GitHub Username: ${data.username}
+  - Email: ${data.email}
 
 `;
 }
