@@ -1,4 +1,6 @@
 const inquirer = require('inquirer');
+// adds loop option to inquirer. This allows user to enter a list of answers for a question
+// inquirer.registerPrompt("loop", require("inquirer-loop")(inquirer));
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
@@ -58,28 +60,34 @@ const questions = [
   },
   {
     type: 'confirm',
-    name: 'confirm-screenshot',
+    name: 'confirmScreenshot',
     message: 'Would you like to include a gif animation/screenshot of the app?'
   },
   {
     type: 'input',
     name: 'screenshot',
-    message: 'What is the filename of the app gif animation/screenshot, including the file extension? It must be placed in `./assets/images/`.'
+    message: 'What is the filename of the app gif animation/screenshot, including the file extension? It must be placed in `./assets/images/`.',
+    when: function (userInput) {
+      return userInput.confirmScreenshot;
+    }
   },
   {
     type: 'confirm',
-    name: 'confirm-video',
+    name: 'confirmVideo',
     message: 'Would you like to include a video demo?'
   },
   {
     type: 'input',
     name: 'video',
-    message: 'What is the filename of the video demo file, including the file extension? It must be placed in `./assets/videos/`.'
+    message: 'What is the filename of the video demo file, including the file extension? It must be placed in `./assets/videos/`.',
+    when: function (userInput) {
+      return userInput.confirmVideo;
+    }
   },
   {
     type: 'input',
-    name: 'installation',
-    message: 'What are the installation instructions? (Required)',
+    name: 'installationFirst',
+    message: 'What is the first installation instruction?.',
     validate: userInput => {
       if (userInput) {
         return true;
@@ -90,7 +98,32 @@ const questions = [
     }
   },
   {
-    type: 'input',
+    type: 'loop',
+    name: 'installationMore',
+    message: 'Add another installation instruction?',
+    questions: [
+      {
+        type: 'input',
+        name: 'key',
+        message: 'What is the installation step number?'
+      },
+      {
+        type: 'input',
+        name: 'value',
+        message: "What is the installation instruction?"
+      }
+    ],
+    validate: userInput => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log('You need to enter installation instructions!');
+        return false;
+      }
+    }
+  },
+  {
+    type: 'loop',
     name: 'usage',
     message: 'Please describe the usage information (Required)',
     validate: userInput => {
@@ -103,39 +136,53 @@ const questions = [
     }
   },
   {
+    type: 'loop',
+    name: 'tech',
+    message: 'Please list all technologies used'
+  },
+  {
     type: 'confirm',
-    name: 'confirm-collaborators',
+    name: 'confirmCollaborators',
     message: 'Would you like to include a collaborators section?'
   },
   {
-    type: 'list-input',
+    type: 'loop',
     name: 'collaborators',
-    message: 'Please list all collaborators'
+    message: 'Please list all collaborators',
+    when: function (userInput) {
+      return userInput.confirmCollaborators;
+    }
   },
   {
     type: 'confirm',
-    name: 'confirm-license',
+    name: 'confirmLicense',
     message: 'Would you like to include a license section?'
   },
   {
-    type: 'list-input',
+    type: 'rawlist',
     name: 'license',
     message: 'Please select a license',
-    choices: ['ISC', 'MIT', 'No License']
+    choices: ['ISC', 'MIT', 'Other'],
+    when: function (userInput) {
+      return userInput.confirmLicense;
+    }
   },
   {
     type: 'confirm',
-    name: 'confirm-badges',
+    name: 'confirmBadges',
     message: 'Would you like to include a badges section?'
   },
   {
-    type: 'list-input',
+    type: 'rawlist',
     name: 'badges',
     message: 'Please select the badges that you wish to add.',
-    choices: ['ISC', 'MIT', 'No License'],
+    choices: ['x', 'y', 'z'],
+    when: function (userInput) {
+      return userInput.confirmBadges;
+    }
   },
   {
-    type: 'input',
+    type: 'loop',
     name: 'features',
     message: 'What are the main features of the project? (Required)',
     validate: userInput => {
@@ -149,33 +196,42 @@ const questions = [
   },
   {
     type: 'confirm',
-    name: 'confirm-contributing',
+    name: 'confirmContributing',
     message: 'Would you like to include a contributing section?'
   },
   {
-    type: 'input',
+    type: 'loop',
     name: 'contributing',
-    message: 'What are the contribution guidelines?'
+    message: 'What are the contribution guidelines?',
+    when: function (userInput) {
+      return userInput.confirmContributing;
+    }
   },
   {
     type: 'confirm',
-    name: 'confirm-tests',
+    name: 'confirmTests',
     message: 'Would you like to include a tests section?'
   },
   {
-    type: 'input',
+    type: 'loop',
     name: 'tests',
-    message: 'What are the test instructions?'
+    message: 'What are the test instructions?',
+    when: function (userInput) {
+      return userInput.confirmTests;
+    }
   },
   {
     type: 'confirm',
-    name: 'confirm-roadmap',
+    name: 'confirmRoadmap',
     message: 'Would you like to include a roadmap section?'
   },
   {
-    type: 'input',
+    type: 'loop',
     name: 'roadmap',
-    message: 'What are the next steps and/or future upgrades?'
+    message: 'What are the next steps and/or future upgrades?',
+    when: function (userInput) {
+      return userInput.confirmRoadmap;
+    }
   },
   {
     type: 'input',

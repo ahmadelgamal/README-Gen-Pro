@@ -10,6 +10,7 @@
   - [Demo](#Demo)
   - [Installation](#Installation)
   - [Usage](#Usage)
+  - [Technologies Used](#Technologies-Used)
   - [Credits](#Credits)
   - [License](#License)
   - [Badges](#Badges)
@@ -29,39 +30,43 @@
   ![Screenshot/Gif Animation](./assets/images/screenshot.png)
 
   ### Video
-  ![Video Demo](./assets/videos/video.mov)
+  ![Video Demo](./assets/videos / undefined)
 
   ## Installation
-  Clone the app to your local machine. This will copy `package.json` to your local machine, which includes the required packages/modules/dependencies.
+  undefined
   
   ## Usage
-  Run `node index.js` or `npm start`. This will invoke the app.
+  Go to the command line, such as Terminal, Vim, etc.
+  
+  ## Technologies Used
+  HTML
   
   ## Credits
   ### Collaborators
-  None
+  undefined
     
   ## License
-  MIT
+  undefined
   
   ## Badges
-  No badges
+  undefined
   
   ## Features
   This is a simple Command-Line Iinterface (CLI) app that uses the `inquirer` module to ask the user a series of questions. The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run.
   
   ## Contributing
-  No contributions neeeded.
+  undefined
   
   ## Tests
-  No tests available.
+  undefined
 
   ## Roadmap
-  No roadmap available.
+  Add support for badges.
   
   ## Questions
-  Please send your questions and/or comments to:
+  Please send your questions and / or comments to:
   - Ahmad El Gamal
-  - GitHub Username: ahmadelgamal
+  - GitHub Portfolio: https://github.com/ahmadelgamal
   - Email: ahmadelgamal@gmail.com
 
+  

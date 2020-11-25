@@ -12,6 +12,7 @@ function generateMarkdown(data) {
   - [Demo](#Demo)
   - [Installation](#Installation)
   - [Usage](#Usage)
+  - [Technologies Used](#Technologies-Used)
   - [Credits](#Credits)
   - [License](#License)
   - [Badges](#Badges)
@@ -31,13 +32,16 @@ function generateMarkdown(data) {
   ![Screenshot/Gif Animation](./assets/images/${data.screenshot})
 
   ### Video
-  ![Video Demo](./assets/videos/${data.video})
+  ![Video Demo](./assets/videos / ${data.video})
 
   ## Installation
   ${data.installation}
   
   ## Usage
   ${data.usage}
+  
+  ## Technologies Used
+  ${data.tech}
   
   ## Credits
   ### Collaborators
@@ -62,12 +66,12 @@ function generateMarkdown(data) {
   ${data.roadmap}
   
   ## Questions
-  Please send your questions and/or comments to:
+  Please send your questions and / or comments to:
   - ${data.name}
-  - GitHub Username: ${data.username}
+  - GitHub Portfolio: https://github.com/${data.username}
   - Email: ${data.email}
 
-`;
+  `;
 }
 
 module.exports = generateMarkdown;
