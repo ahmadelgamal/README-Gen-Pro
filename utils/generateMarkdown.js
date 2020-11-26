@@ -72,6 +72,7 @@ function generateBullets(data) {
     let generatedSteps = "";
     
     for (let i = 0; i < data.length; i++) {
+      // can change the '1. ' to '- ' to convert to bullet-list instead of number-list
       const nextStep = `1. ${data[i]}
 `;
       generatedSteps = generatedSteps.concat(nextStep);

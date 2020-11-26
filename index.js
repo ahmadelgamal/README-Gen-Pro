@@ -64,7 +64,7 @@ const questions = [
   {
     type: 'input',
     name: 'installation',
-    message: "What is are the steps for installation (Please separate them with '|' )?",
+    message: "What is are the steps for installation (separate with '|')?",
     validate: userInput => {
       if (userInput) {
         return true;
@@ -77,7 +77,7 @@ const questions = [
   {
     type: 'input',
     name: 'usage',
-    message: 'Please describe the usage information (Required)',
+    message: "Please describe the usage information (separate with '|') (Required)",
     validate: userInput => {
       if (userInput) {
         return true;
@@ -116,7 +116,7 @@ const questions = [
   {
     type: 'input',
     name: 'tech',
-    message: "Please list the technologies used (Please separate them with '|' ):",
+    message: "Please list the technologies used (separate with '|'):",
     validate: userInput => {
       if (userInput) {
         return true;
@@ -134,7 +134,7 @@ const questions = [
   {
     type: 'input',
     name: 'collaborators',
-    message: "Please list collaborators (Please separate them with '|' ):",
+    message: "Please list collaborators (separate with '|'):",
     when: function (userInput) {
       return userInput.confirmCollaborators;
     }
@@ -156,7 +156,7 @@ const questions = [
   {
     type: 'input',
     name: 'features',
-    message: "What are the main features of the project (Please separate them with '|' )? (Required)",
+    message: "What are the main features of the project (separate with '|')? (Required)",
     validate: userInput => {
       if (userInput) {
         return true;
@@ -174,7 +174,7 @@ const questions = [
   {
     type: 'input',
     name: 'contributing',
-    message: "What are the contribution guidelines (Please separate them with '|' )?",
+    message: "What are the contribution guidelines (separate with '|')?",
     when: function (userInput) {
       return userInput.confirmContributing;
     }
@@ -187,7 +187,7 @@ const questions = [
   {
     type: 'input',
     name: 'tests',
-    message: "What are the test instructions (Please separate them with '|' )?",
+    message: "What are the test instructions (separate with '|')?",
     when: function (userInput) {
       return userInput.confirmTests;
     }
@@ -200,7 +200,7 @@ const questions = [
   {
     type: 'input',
     name: 'roadmap',
-    message: "What are the next steps and/or future upgrades (Please separate them with '|' )?",
+    message: "What are the next steps and/or future upgrades (separate with '|')?",
     when: function (userInput) {
       return userInput.confirmRoadmap;
     }

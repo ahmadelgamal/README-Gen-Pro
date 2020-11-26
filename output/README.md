@@ -30,7 +30,7 @@ https://github.com/ahmadelgamal/ucb-README-generator
 
 ## Usage
 1. Go to the command line. 
-1.  Run `node index.js` (or `npm start`). 
+1.  Run `node index.js` or `npm start`. 
 1.  Answer the question prompts. 
 1.  Once completed, check the `output` folder for the `README.md` file. 
 1.  If you chose to add a gif animation/screenshot file, then please add it to a `./assets/images` folder in your app. 
@@ -52,10 +52,7 @@ https://github.com/ahmadelgamal/ucb-README-generator
 This project is licensed under the terms of the [MIT](https://opensource.org/licenses/MIT) license.
 
 ## Features
-1. This is an easy to use Command-Line Iinterface (CLI) app 
-1.  It uses the `inquirer` module to ask the user a series of questions. 
-1.  The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run. 
-1.  List items can be changed to numbers instead of bullets by changing the '`1. `' on line 76 of `generateMarkdown.js` to '`- `'
+1. This is a simple Command-Line Iinterface (CLI) app that uses the `inquirer` module to ask the user a series of questions. The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run.
 
 
 
