@@ -66,6 +66,20 @@ function generateLicenseBadge(data) {
   return `${badgeLink}`;
 }
 
+function generateBullets(data) {
+  if(data) {
+    data = data.split("|");
+    let generatedSteps = "";
+    
+    for (let i = 0; i < data.length; i++) {
+      const nextStep = `1. ${data[i]}
+`;
+      generatedSteps = generatedSteps.concat(nextStep);
+    }
+    return generatedSteps;
+  } else return ``;
+}
+
 function generateScreenshot(data) {
   if (data.confirmScreenshot) {
     return `### Screenshot / Gif Animation
@@ -85,10 +99,11 @@ function generateVideo(data) {
 }
 
 function generateCollaborators(data) {
-  if (data.confirmCollaborators) {
+  if (data.confirmCollaborators && data.collaborators) {
+    const renderCollaborators = generateBullets(data.collaborators);
     return `## Credits
 ### Collaborators
-${data.collaborators}`;
+${renderCollaborators}`;
   } else {
     return ``;
   }
@@ -114,27 +129,30 @@ This project is licensed under the terms of the [${data.license}](${licenseLink}
 }
 
 function generateContributing(data) {
-  if (data.confirmContributing) {
+  if (data.confirmContributing && data.contributing) {
+    const renderContributing = generateBullets(data.contributing);
     return `## Contributing
-- ${data.contributing}`;
+${renderContributing}`;
   } else {
     return ``;
   }
 }
 
 function generateTests(data) {
-  if (data.confirmTests) {
+  if (data.confirmTests && data.tests) {
+    const renderTests = generateBullets(data.tests);
     return `## Tests
-${data.tests}`;
+${renderTests}`;
   } else {
     return ``;
   }
 }
 
 function generateRoadmap(data) {
-  if (data.confirmRoadmap) {
+  if (data.confirmRoadmap && data.roadmap) {
+    const renderRoadmap = generateBullets(data.roadmap);
     return `## Roadmap
-${data.roadmap}`;
+${renderRoadmap}`;
   } else {
     return ``;
   }
@@ -158,31 +176,28 @@ ${data.deployment}
 ${data.repo}
 
 ## Installation
-- ${data.installationFirst}
+${generateBullets(data.installation)}
 
 ## Usage
-- ${data.usage}
+${generateBullets(data.usage)}
 ${generateScreenshot(data)}
 ${generateVideo(data)}
 
 ## Technologies Used
-- ${data.tech}
+${generateBullets(data.tech)}
 
 ${generateCollaborators(data)}
 ${generateLicense(data)}
 
 ## Features
-- ${data.features}
+${generateBullets(data.features)}
 
 ${generateContributing(data)}
 ${generateTests(data)}
 ${generateRoadmap(data)}
 
 ## Questions
-Please send your questions and / or comments to:
-- ${data.name}
-- GitHub Portfolio: https://github.com/${data.username}
-- Email: ${data.email}
+Please send your questions and / or comments to **${data.name}** at ${data.email}, or contact me on [GitHub](https://github.com/${data.username}).
 `;
 }
 
