@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 // adds loop option to inquirer. This allows user to enter a list of answers for a question
 // inquirer.registerPrompt("loop", require("inquirer-loop")(inquirer));
-const writeToFile = require('../writeToFile');
+const writeToFile = require('./writeToFile');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // array of questions for user
@@ -143,7 +143,15 @@ const questions = [
   {
     type: 'loop',
     name: 'tech',
-    message: 'Please list all technologies used:'
+    message: 'Please list all technologies used:',
+    validate: userInput => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log('You need to list all technologies used!');
+        return false;
+      }
+    }    
   },
   {
     type: 'confirm',

@@ -13,12 +13,14 @@ module.exports = {
   tech: "Inquirer",
   confirmCollaborators: false,
   confirmLicense: true,
-  license: 'GNU GPL v3',
+  license: 'MIT',
   features: "This is a simple Command-Line Iinterface (CLI) app that uses the `inquirer` module to ask the user a series of questions. The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run.",
   confirmContributing: false,
-  confirmTests: false,
+  confirmTests: true,
+  tests: "Run the command `npm test` to generate a sample `README.md`. You can change the test values by changing the values of the object in the `sample-answers.js` file, located in the `__test` folder.",
   confirmRoadmap: true,
-  name: "Ahmad El Gamal",
+  roadmap: "1. Add more license options. 1. Add support for more badges. 1. Add autocomplete. 1. Add trim() to user input.",
+  name: "Ahmad El Gamal.",
   username: "ahmadelgamal",
   email: "ahmadelgamal@gmail.com"
 };

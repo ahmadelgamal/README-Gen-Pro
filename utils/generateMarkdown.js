@@ -1,20 +1,53 @@
 function generateTOC(data) {
-
   if (data.confirmTOC) {
-    return `
-## Table of Contents
+
+    let toc = `## Table of Contents
 - [Deployment URL](#Deployment-URL)
 - [Repo URL](#Repo-URL)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Technologies Used](#Technologies-Used)
-- [Credits](#Credits)
-- [License](#License)
-- [Contributing](#Contributing)
-- [Tests](#Tests)
-- [Roadmap](#Roadmap)
-- [Questions](#Questions)
-    `;
+- [Technologies Used](#Technologies-Used)`;
+
+    const collaborators = `
+- [Credits](#Credits)`;
+    if (data.confirmCollaborators) {
+      toc = toc.concat(collaborators);
+    }
+
+    const license = `
+- [License](#License)`;
+    if (data.confirmLicense) {
+      toc = toc.concat(license);
+    }
+
+    const features = `
+- [Features](#Features)`;
+    toc = toc.concat(features);
+
+    const contributing = `
+- [Contributing](#Contributing)`;
+    if (data.confirmContributing) {
+      toc = toc.concat(contributing);
+    }
+
+    const tests = `
+- [Tests](#Tests)`;
+    if (data.confirmTests) {
+      toc = toc.concat(tests);
+    }
+
+    const roadmap = `
+- [Roadmap](#Roadmap)`;
+    if (data.confirmRoadmap) {
+      toc = toc.concat(roadmap);
+    }
+
+    const questions = `
+- [Questions](#Questions)`;
+    toc = toc.concat(questions);
+
+    return toc;
+
   } else {
     return ``;
   }
@@ -30,17 +63,13 @@ function generateLicenseBadge(data) {
 
   const badgeLink = badgeObject[data.license];
 
-  return `
-  ${badgeLink}
-  `;
+  return `${badgeLink}`;
 }
 
 function generateScreenshot(data) {
   if (data.confirmScreenshot) {
-    return `
-### Screenshot / Gif Animation
-![Screenshot / Gif Animation](./assets/images/${data.screenshot})
-    `;
+    return `### Screenshot / Gif Animation
+![Screenshot / Gif Animation](./assets/images/${data.screenshot})`;
   } else {
     return ``;
   }
@@ -48,10 +77,8 @@ function generateScreenshot(data) {
 
 function generateVideo(data) {
   if (data.confirmVideo) {
-    return `
-### Video
-![Video Demo](./assets/videos/${data.video})
-    `;
+    return `### Video
+![Video Demo](./assets/videos/${data.video})`;
   } else {
     return ``;
   }
@@ -59,11 +86,9 @@ function generateVideo(data) {
 
 function generateCollaborators(data) {
   if (data.confirmCollaborators) {
-    return `
-## Credits
+    return `## Credits
 ### Collaborators
-${data.collaborators}
-    `;
+${data.collaborators}`;
   } else {
     return ``;
   }
@@ -78,13 +103,11 @@ function generateLicense(data) {
       'GNU GPL v3': 'https://www.gnu.org/licenses/gpl-3.0',
       UNLICENSE: 'http://unlicense.org/'
     };
-  
+
     const licenseLink = licenseObject[data.license];
 
-    return `
-## License
-This project is licensed under the terms of the [${data.license}](${licenseLink}) license.
-    `;
+    return `## License
+This project is licensed under the terms of the [${data.license}](${licenseLink}) license.`;
   } else {
     return ``;
   }
@@ -92,10 +115,8 @@ This project is licensed under the terms of the [${data.license}](${licenseLink}
 
 function generateContributing(data) {
   if (data.confirmContributing) {
-    return `
-## Contributing
-- ${data.contributing}
-    `;
+    return `## Contributing
+- ${data.contributing}`;
   } else {
     return ``;
   }
@@ -103,10 +124,8 @@ function generateContributing(data) {
 
 function generateTests(data) {
   if (data.confirmTests) {
-    return `
-## Tests
-${data.tests}
-    `;
+    return `## Tests
+${data.tests}`;
   } else {
     return ``;
   }
@@ -114,10 +133,8 @@ ${data.tests}
 
 function generateRoadmap(data) {
   if (data.confirmRoadmap) {
-    return `
-## Roadmap
-${data.roadmap}
-    `;
+    return `## Roadmap
+${data.roadmap}`;
   } else {
     return ``;
   }
@@ -125,11 +142,8 @@ ${data.roadmap}
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-  console.log(data);
+  return `# ${data.title}
 
-  return `
-# ${data.title}
-  
 ${generateLicenseBadge(data)}
 
 ## Description
@@ -137,29 +151,29 @@ ${data.description}
 
 ${generateTOC(data)}
 
-## Deployment URL
+### Deployment URL
 ${data.deployment}
-  
-## Repo URL
+
+### Repo URL
 ${data.repo}
 
 ## Installation
 - ${data.installationFirst}
-    
+
 ## Usage
 - ${data.usage}
 ${generateScreenshot(data)}
 ${generateVideo(data)}
-  
+
 ## Technologies Used
 - ${data.tech}
-  
+
 ${generateCollaborators(data)}
 ${generateLicense(data)}
-  
+
 ## Features
 - ${data.features}
-  
+
 ${generateContributing(data)}
 ${generateTests(data)}
 ${generateRoadmap(data)}
@@ -169,7 +183,7 @@ Please send your questions and / or comments to:
 - ${data.name}
 - GitHub Portfolio: https://github.com/${data.username}
 - Email: ${data.email}
-  `;
+`;
 }
 
 module.exports = generateMarkdown;
