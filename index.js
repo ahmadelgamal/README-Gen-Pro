@@ -22,7 +22,7 @@ const questions = [
   {
     type: 'input',
     name: 'description',
-    message: 'Please input a brief description of the project (what, why & how)? (Required)',
+    message: 'Please input a brief description of the project (what, why & how?) (Required)',
     validate: userInput => {
       if (userInput) {
         return true;
@@ -64,40 +64,14 @@ const questions = [
     }
   },
   {
-    type: 'confirm',
-    name: 'confirmScreenshot',
-    message: 'Would you like to include a gif animation/screenshot of the app?'
-  },
-  {
-    type: 'input',
-    name: 'screenshot',
-    message: 'What is the filename of the app gif animation/screenshot, including the file extension? It must be placed in `./assets/images/`.',
-    when: function (userInput) {
-      return userInput.confirmScreenshot;
-    }
-  },
-  {
-    type: 'confirm',
-    name: 'confirmVideo',
-    message: 'Would you like to include a video demo?'
-  },
-  {
-    type: 'input',
-    name: 'video',
-    message: 'What is the filename of the video demo file, including the file extension? It must be placed in `./assets/videos/`.',
-    when: function (userInput) {
-      return userInput.confirmVideo;
-    }
-  },
-  {
     type: 'input',
     name: 'installationFirst',
-    message: 'What is the first installation instruction?',
+    message: 'What is the first step for installation?',
     validate: userInput => {
       if (userInput) {
         return true;
       } else {
-        console.log('You need to enter installation instructions!');
+        console.log('You need to enter the first step for installation!');
         return false;
       }
     }
@@ -141,9 +115,35 @@ const questions = [
     }
   },
   {
+    type: 'confirm',
+    name: 'confirmScreenshot',
+    message: 'Would you like to include a gif animation/screenshot of the app?'
+  },
+  {
+    type: 'input',
+    name: 'screenshot',
+    message: 'What is the filename of the app gif animation/screenshot, including the file extension (It must be placed in ./assets/images/)?',
+    when: function (userInput) {
+      return userInput.confirmScreenshot;
+    }
+  },
+  {
+    type: 'confirm',
+    name: 'confirmVideo',
+    message: 'Would you like to include a video demo?'
+  },
+  {
+    type: 'input',
+    name: 'video',
+    message: 'What is the filename of the video demo file, including the file extension? It must be placed in `./assets/videos/`.',
+    when: function (userInput) {
+      return userInput.confirmVideo;
+    }
+  },
+  {
     type: 'loop',
     name: 'tech',
-    message: 'Please list all technologies used'
+    message: 'Please list all technologies used:'
   },
   {
     type: 'confirm',
@@ -153,7 +153,7 @@ const questions = [
   {
     type: 'loop',
     name: 'collaborators',
-    message: 'Please list all collaborators',
+    message: 'Please list all collaborators:',
     when: function (userInput) {
       return userInput.confirmCollaborators;
     }
@@ -166,24 +166,10 @@ const questions = [
   {
     type: 'rawlist',
     name: 'license',
-    message: 'Please select a license',
-    choices: ['ISC', 'MIT', 'Other'],
+    message: 'Please select a license:',
+    choices: ['ISC', 'MIT', 'GNU GPLv3'],
     when: function (userInput) {
       return userInput.confirmLicense;
-    }
-  },
-  {
-    type: 'confirm',
-    name: 'confirmBadges',
-    message: 'Would you like to include a badges section?'
-  },
-  {
-    type: 'rawlist',
-    name: 'badges',
-    message: 'Please select the badges that you wish to add.',
-    choices: ['x', 'y', 'z'],
-    when: function (userInput) {
-      return userInput.confirmBadges;
     }
   },
   {
