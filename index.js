@@ -251,7 +251,6 @@ function init() {
   inquirer
     .prompt(questions)
     .then(answers => {
-      console.log(answers);
       return generateMarkdown(answers);
     })
     .then(markdownData => {
