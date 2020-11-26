@@ -1,4 +1,5 @@
 function generateTOC(data) {
+
   if (data.confirmTOC) {
     return `
 ## Table of Contents
@@ -20,24 +21,17 @@ function generateTOC(data) {
 }
 
 function generateLicenseBadge(data) {
-  if (data.license === 'ISC') {
-    return `
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-    `;
-  } else if (data.license === 'MIT') {
-    return `
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-  } else if (data.license === 'GNU GPLv3') {
-    return `
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-    `;
-  } else if (data.license === 'Unlicense') {
-    return `
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-    `;
-  } else {
-    return ``;
-  }
+  const badgeObject = {
+    ISC: '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)',
+    MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
+    UNLICENSE: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)',
+  };
+
+  const badgeLink = badgeObject[data.license];
+
+  return `
+  ${badgeLink}
+  `;
 }
 
 function generateScreenshot(data) {
@@ -76,9 +70,18 @@ ${data.collaborators}
 
 function generateLicense(data) {
   if (data.confirmLicense) {
+
+    const licenseObject = {
+      ISC: 'https://opensource.org/licenses/ISC',
+      MIT: 'https://opensource.org/licenses/MIT',
+      UNLICENSE: 'http://unlicense.org/'
+    };
+  
+    const licenseLink = licenseObject[data.license];
+
     return `
 ## License
-This project is licensed under the terms of the ${data.license} license.
+This project is licensed under the terms of the [${data.license}](${licenseLink}) license.
     `;
   } else {
     return ``;

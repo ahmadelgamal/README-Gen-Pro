@@ -167,7 +167,7 @@ const questions = [
     type: 'rawlist',
     name: 'license',
     message: 'Please select a license:',
-    choices: ['ISC', 'MIT', 'GNU GPLv3'],
+    choices: ['ISC', 'MIT', 'Unlicense'],
     when: function (userInput) {
       return userInput.confirmLicense;
     }
