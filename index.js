@@ -1,6 +1,4 @@
 const inquirer = require('inquirer');
-// adds loop option to inquirer. This allows user to enter a list of answers for a question
-// inquirer.registerPrompt("loop", require("inquirer-loop")(inquirer));
 const writeToFile = require('./utils/writeToFile');
 const generateMarkdown = require('./utils/generateMarkdown');
 
@@ -78,20 +76,8 @@ const questions = [
   },
   {
     type: 'loop',
-    name: 'installationMore',
+    name: 'installationLoop',
     message: 'Add another installation instruction?',
-    questions: [
-      {
-        type: 'input',
-        name: 'key',
-        message: 'What is the installation step number?'
-      },
-      {
-        type: 'input',
-        name: 'value',
-        message: "What is the installation instruction?"
-      }
-    ],
     validate: userInput => {
       if (userInput) {
         return true;
@@ -102,7 +88,7 @@ const questions = [
     }
   },
   {
-    type: 'loop',
+    type: 'input',
     name: 'usage',
     message: 'Please describe the usage information (Required)',
     validate: userInput => {
@@ -141,7 +127,7 @@ const questions = [
     }
   },
   {
-    type: 'loop',
+    type: 'input',
     name: 'tech',
     message: 'Please list all technologies used:',
     validate: userInput => {
@@ -151,7 +137,7 @@ const questions = [
         console.log('You need to list all technologies used!');
         return false;
       }
-    }    
+    }
   },
   {
     type: 'confirm',
@@ -159,7 +145,7 @@ const questions = [
     message: 'Would you like to include a collaborators section?'
   },
   {
-    type: 'loop',
+    type: 'input',
     name: 'collaborators',
     message: 'Please list all collaborators:',
     when: function (userInput) {
@@ -181,7 +167,7 @@ const questions = [
     }
   },
   {
-    type: 'loop',
+    type: 'input',
     name: 'features',
     message: 'What are the main features of the project? (Required)',
     validate: userInput => {
@@ -199,7 +185,7 @@ const questions = [
     message: 'Would you like to include a contributing section?'
   },
   {
-    type: 'loop',
+    type: 'input',
     name: 'contributing',
     message: 'What are the contribution guidelines?',
     when: function (userInput) {
@@ -212,7 +198,7 @@ const questions = [
     message: 'Would you like to include a tests section?'
   },
   {
-    type: 'loop',
+    type: 'input',
     name: 'tests',
     message: 'What are the test instructions?',
     when: function (userInput) {
@@ -225,7 +211,7 @@ const questions = [
     message: 'Would you like to include a roadmap section?'
   },
   {
-    type: 'loop',
+    type: 'input',
     name: 'roadmap',
     message: 'What are the next steps and/or future upgrades?',
     when: function (userInput) {
@@ -278,6 +264,7 @@ function init() {
   inquirer
     .prompt(questions)
     .then(answers => {
+      console.log(answers);
       return generateMarkdown(answers);
     })
     .then(markdownData => {

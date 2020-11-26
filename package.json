@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/ahmadelgamal/ucb-README-generator#readme",
   "dependencies": {
-    "inquirer": "^7.3.3",
-    "inquirer-loop": "^0.3.0"
+    "inquirer": "^7.3.3"
   }
 }
