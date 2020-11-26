@@ -18,22 +18,22 @@ A command-line application that dynamically generates a professional `README.md`
 - [Questions](#Questions)
 
 ### Deployment URL
-This app is not deployed online. It runs on `Node.js` in your command-line interface (CLI)
+This app is not deployed online. It runs in `Node.js` in your command-line interface (CLI).
 
 ### Repo URL
-This app is not deployed online. It runs on `Node.js` in your command-line interface (CLI).
+https://github.com/ahmadelgamal/ucb-README-generator
 
 ## Installation
 - Clone the app to your local machine. This will copy `package.json` to your local machine, which includes the required packages (modules/dependencies).
 
 ## Usage
-- Go to the command line, such as Terminal, Vim, etc.
+- Go to the command line.
 ### Screenshot / Gif Animation
 ![Screenshot / Gif Animation](./assets/images/screenshot.png)
 
 
 ## Technologies Used
-- Inquirer
+- Inquirer.js
 
 
 ## License

@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 // adds loop option to inquirer. This allows user to enter a list of answers for a question
 // inquirer.registerPrompt("loop", require("inquirer-loop")(inquirer));
-const writeToFile = require('./writeToFile');
+const writeToFile = require('./utils/writeToFile');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // array of questions for user
