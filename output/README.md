@@ -1,72 +1,58 @@
 
-  # UCB `README.md` Generator
+  
+  # eqgeqg
   
   ## Description
-  A command-line application that dynamically generates a professional `README.md` file from a user's input using the Inquirer package.
+  fqefeqf
+
   
-  ## Table of Contents
-  - [Deployment URL](#Deployment-URL)
-  - [Repo URL](#Repo-URL)
-  - [Demo](#Demo)
-  - [Installation](#Installation)
-  - [Usage](#Usage)
-  - [Technologies Used](#Technologies-Used)
-  - [Credits](#Credits)
-  - [License](#License)
-  - [Badges](#Badges)
-  - [Contributing](#Contributing)
-  - [Tests](#Tests)
-  - [Roadmap](#Roadmap)
-  - [Questions](#Questions)
 
   ## Deployment URL
-  This app is not deployed online. It runs on `Node.js` in your command-line interface (CLI).
+  wqrgwqrg
   
   ## Repo URL
-  https://github.com/ahmadelgamal/ucb-README-generator
+  wrgg
 
-  ## Demo
-  ### Screenshot/Gif Animation
-  ![Screenshot/Gif Animation](./assets/images/screenshot.png)
-
-  ### Video
-  ![Video Demo](./assets/videos / undefined)
-
+  
+    ## Demo
+    
+  
+    ### Screenshot / Gif Animation
+    ![Screenshot / Gif Animation](./assets/images / rwqgwr)
+    
+  
+    ## Demo
+    
+  
   ## Installation
   undefined
   
   ## Usage
-  Go to the command line, such as Terminal, Vim, etc.
+  wqrgwr
   
   ## Technologies Used
-  HTML
+  gwqrg
   
-  ## Credits
-  ### Collaborators
-  undefined
+  
+  
+    ## License
+    MIT
     
-  ## License
-  undefined
-  
-  ## Badges
-  undefined
   
   ## Features
-  This is a simple Command-Line Iinterface (CLI) app that uses the `inquirer` module to ask the user a series of questions. The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run.
+  rgwqgg
   
-  ## Contributing
-  undefined
   
-  ## Tests
-  undefined
+  
+  
+    ## Roadmap
+    wrgqwr
+    
 
-  ## Roadmap
-  Add support for badges.
-  
   ## Questions
   Please send your questions and / or comments to:
-  - Ahmad El Gamal
-  - GitHub Portfolio: https://github.com/ahmadelgamal
-  - Email: ahmadelgamal@gmail.com
+  - grwgqwg
+  - GitHub Portfolio: https://github.com/wqrgwg
+  - Email: qwrgwrg
 
   

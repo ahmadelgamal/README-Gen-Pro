@@ -33,6 +33,11 @@ const questions = [
     }
   },
   {
+    type: 'confirm',
+    name: 'confirmTOC',
+    message: 'Would you like to include a table of contents?'
+  },
+  {
     type: 'input',
     name: 'deployment',
     message: 'What is the deployment link (URL)? (Required)',
@@ -87,7 +92,7 @@ const questions = [
   {
     type: 'input',
     name: 'installationFirst',
-    message: 'What is the first installation instruction?.',
+    message: 'What is the first installation instruction?',
     validate: userInput => {
       if (userInput) {
         return true;
