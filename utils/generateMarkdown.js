@@ -24,6 +24,7 @@ function generateLicenseBadge(data) {
   const badgeObject = {
     ISC: '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)',
     MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
+    'GNU GPL v3': '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
     UNLICENSE: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)',
   };
 
@@ -74,6 +75,7 @@ function generateLicense(data) {
     const licenseObject = {
       ISC: 'https://opensource.org/licenses/ISC',
       MIT: 'https://opensource.org/licenses/MIT',
+      'GNU GPL v3': 'https://www.gnu.org/licenses/gpl-3.0',
       UNLICENSE: 'http://unlicense.org/'
     };
   

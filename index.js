@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 // adds loop option to inquirer. This allows user to enter a list of answers for a question
 // inquirer.registerPrompt("loop", require("inquirer-loop")(inquirer));
-const fs = require('fs');
+const writeToFile = require('../writeToFile');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // array of questions for user
@@ -167,7 +167,7 @@ const questions = [
     type: 'rawlist',
     name: 'license',
     message: 'Please select a license:',
-    choices: ['ISC', 'MIT', 'Unlicense'],
+    choices: ['ISC', 'MIT', 'GNU GPL v3', 'Unlicense'],
     when: function (userInput) {
       return userInput.confirmLicense;
     }
@@ -264,23 +264,6 @@ const questions = [
     }
   }
 ];
-
-// function to write README file
-function writeToFile(fileName, data) {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(fileName, data, err => {
-      if (err) {
-        reject(err); // calling `reject` will cause the promise to fail with or without the error passed as an argument
-        return; // return will stop the function
-      }
-
-      resolve({
-        ok: true,
-      });
-      console.log('README.md created successfully. Please check the output folder!');
-    });
-  });
-};
 
 // function to initialize program
 function init() {
