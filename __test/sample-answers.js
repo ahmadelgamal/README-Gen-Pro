@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Professional `README.md` Generator",
+  title: "README Gen Pro",
   description: "A command-line application that dynamically generates a professional `README.md` file from a user's input using the Inquirer package.",
   confirmTOC: true,
   deployment: "This is a command-line application. It is not deployed online.",
