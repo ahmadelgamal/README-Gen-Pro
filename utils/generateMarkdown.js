@@ -1,7 +1,6 @@
 function generateTOC(data) {
   if (data.confirmTOC) {
-    return `
-    ## Table of Contents
+    return `## Table of Contents
     - [Deployment URL](#Deployment-URL)
     - [Repo URL](#Repo-URL)
     - [Demo](#Demo)
@@ -16,93 +15,69 @@ function generateTOC(data) {
     - [Roadmap](#Roadmap)
     - [Questions](#Questions)
     `;
-  } else {
-    return ``;
   }
 }
 
 function generateDemo(data) {
   if (data.confirmScreenshot || data.confirmVideo) {
-    return `
-    ## Demo
-    `;
-  } else {
-  return ``;
+    return `## Demo`;
   }
 }
 
 function generateScreenshot(data) {
   if (data.confirmScreenshot) {
-    return `
-    ### Screenshot / Gif Animation
+    return `### Screenshot / Gif Animation
     ![Screenshot / Gif Animation](./assets/images / ${ data.screenshot })
     `;
-  } else {
-  return ``;
   }
 }
 
 function generateVideo(data) {
   if (data.confirmVideo) {
-    return `
-    ### Video
+    return `### Video
     ![Video Demo](./assets/videos / ${data.video})
     `;
-  } else {
-  return ``;
   }
 }
 
 function generateCollaborators(data) {
   if (data.confirmCollaborators) {
-    return `
-    ## Credits
+    return `## Credits
     ### Collaborators
     ${data.collaborators}
     `;
-  } else {
-  return ``;
   }
 }
 
 function generateLicense(data) {
   if (data.confirmLicense) {
-    return `
-    ## License
+    return `## License
     ${data.license}
     `;
-  } else {
-  return ``;
   }
 }
+
 function generateContributing(data) {
   if (data.confirmContributing) {
-    return `
-    ## Contributing
-    ${data.contributing}
+    return `## Contributing
+    - ${data.contributing}
     `;
-  } else {
-  return ``;
   }
 }
+
 function generateTests(data) {
   if (data.confirmTests) {
-    return `
-    ## Tests
+    return `## Tests
     ${data.tests}
     `;
-  } else {
-  return ``;
   }
 }
+
 function generateRoadmap(data) {
   if (data.confirmRoadmap) {
-    return `
-    ## Roadmap
+    return `## Roadmap
     ${data.roadmap}
     `;
-  } else {
-  return ``;
   }
 }
 
@@ -111,7 +86,6 @@ function generateMarkdown(data) {
   console.log(data);
 
   return `
-  
   # ${data.title}
   
   ## Description
@@ -130,19 +104,19 @@ function generateMarkdown(data) {
   ${generateDemo(data)}
   
   ## Installation
-  ${data.installation}
+  - ${data.installationFirst}
   
   ## Usage
-  ${data.usage}
+  - ${data.usage}
   
   ## Technologies Used
-  ${data.tech}
+  - ${data.tech}
   
   ${generateCollaborators(data)}
   ${generateLicense(data)}
   
   ## Features
-  ${data.features}
+  - ${data.features}
   
   ${generateContributing(data)}
   ${generateTests(data)}
@@ -153,7 +127,6 @@ function generateMarkdown(data) {
   - ${data.name}
   - GitHub Portfolio: https://github.com/${data.username}
   - Email: ${data.email}
-
   `;
 }
 
