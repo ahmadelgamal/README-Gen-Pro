@@ -14,12 +14,6 @@ function generateTOC(data) {
       toc = toc.concat(collaborators);
     }
 
-    const license = `
-- [License](#License)`;
-    if (data.confirmLicense) {
-      toc = toc.concat(license);
-    }
-
     const features = `
 - [Features](#Features)`;
     toc = toc.concat(features);
@@ -45,6 +39,13 @@ function generateTOC(data) {
     const questions = `
 - [Questions](#Questions)`;
     toc = toc.concat(questions);
+
+
+    const license = `
+- [License](#License)`;
+    if (data.confirmLicense) {
+      toc = toc.concat(license);
+    }
 
     return toc;
 
@@ -110,25 +111,6 @@ ${renderCollaborators}`;
   }
 }
 
-function generateLicense(data) {
-  if (data.confirmLicense) {
-
-    const licenseObject = {
-      ISC: 'https://opensource.org/licenses/ISC',
-      MIT: 'https://opensource.org/licenses/MIT',
-      'GNU GPL v3': 'https://www.gnu.org/licenses/gpl-3.0',
-      UNLICENSE: 'http://unlicense.org/'
-    };
-
-    const licenseLink = licenseObject[data.license];
-
-    return `## License
-This project is licensed under the terms of the [${data.license}](${licenseLink}) license.`;
-  } else {
-    return ``;
-  }
-}
-
 function generateContributing(data) {
   if (data.confirmContributing && data.contributing) {
     const renderContributing = generateBullets(data.contributing);
@@ -154,6 +136,25 @@ function generateRoadmap(data) {
     const renderRoadmap = generateBullets(data.roadmap);
     return `## Roadmap
 ${renderRoadmap}`;
+  } else {
+    return ``;
+  }
+}
+
+function generateLicense(data) {
+  if (data.confirmLicense) {
+
+    const licenseObject = {
+      ISC: 'https://opensource.org/licenses/ISC',
+      MIT: 'https://opensource.org/licenses/MIT',
+      'GNU GPL v3': 'https://www.gnu.org/licenses/gpl-3.0',
+      UNLICENSE: 'http://unlicense.org/'
+    };
+
+    const licenseLink = licenseObject[data.license];
+
+    return `## License
+This project is licensed under the terms of the [${data.license}](${licenseLink}) license.`;
   } else {
     return ``;
   }
@@ -188,7 +189,6 @@ ${generateVideo(data)}
 ${generateBullets(data.tech)}
 
 ${generateCollaborators(data)}
-${generateLicense(data)}
 
 ## Features
 ${generateBullets(data.features)}
@@ -199,6 +199,8 @@ ${generateRoadmap(data)}
 
 ## Questions
 Please send your questions and / or comments to **${data.name}** at ${data.email}, or contact me on [GitHub](https://github.com/${data.username}).
+
+${generateLicense(data)}
 `;
 }
 

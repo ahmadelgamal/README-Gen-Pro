@@ -1,19 +1,17 @@
 module.exports = {
   title: "README Gen Pro",
-  description: "A command-line application that dynamically generates a professional `README.md` file from a user's input using the Inquirer package.",
+  description: "A command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package.",
   confirmTOC: true,
   deployment: "This is a command-line application. It is not deployed online.",
   repo: "https://github.com/ahmadelgamal/ucb-README-generator",
   installation: "Clone this repository. | Install modules: `npm install`.",
-  usage: "Go to the command line. | Run `node index.js` (or `npm start`). | Answer the question prompts. | Once completed, check the `output` folder for the `README.md` file. | If you chose to add a gif animation/screenshot file, then please add it to a `./assets/images` folder in your app. | If you chose to add a video demo, then please add it to a `./assets/videos` folder in your app.",
+  usage: "Go to the command line. | Run `node index.js` (or `npm start`). | Answer the question prompts. | Once completed, check the `output` folder for the `README.md` file. | If you chose to add a gif animation/screenshot file, then please add it to a `./assets/images` folder in your app. | If you chose to add a video demo, then please add it to a `./assets/videos` folder in your app. | List items can be changed to numbers instead of bullets by changing the '`1. `' on line 76 of `generateMarkdown.js` to '`- `'",
   confirmScreenshot: true,
-  screenshot: "screenshot.png",
+  screenshot: "demo.gif",
   confirmVideo: false,
   tech: "JavaScript | Node.js | Inquirer.js | Markdown",
   confirmCollaborators: false,
-  confirmLicense: true,
-  license: 'MIT',
-  features: "This is an easy to use Command-Line Iinterface (CLI) app | It uses the `inquirer` module to ask the user a series of questions. | The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run. | List items can be changed to numbers instead of bullets by changing the '`1. `' on line 76 of `generateMarkdown.js` to '`- `'",
+  features: "This is an easy to use Command-Line Iinterface (CLI) app | It uses the `inquirer` module to ask the user a series of questions. | The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run.",
   confirmContributing: false,
   confirmTests: true,
   tests: "Run the command `npm test` to generate a sample `README.md`. | You can change the test values by changing the values of the object in the `sample-answers.js` file, located in the `__test` folder.",
@@ -21,5 +19,7 @@ module.exports = {
   roadmap: "Add more license options. | Add support for more badges. | Add autocomplete. | Add trim() to user input.",
   name: "Ahmad El Gamal",
   username: "ahmadelgamal",
-  email: "ahmadelgamal@gmail.com"
+  email: "ahmadelgamal@gmail.com",
+  confirmLicense: true,
+  license: 'MIT'
 };

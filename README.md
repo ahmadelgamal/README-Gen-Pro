@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-A command-line application that dynamically generates a professional `README.md` file from a user's input using the Inquirer package.
+A command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package.
 
 ## Table of Contents
 - [Deployment URL](#Deployment-URL)
@@ -11,11 +11,11 @@ A command-line application that dynamically generates a professional `README.md`
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Technologies Used](#Technologies-Used)
-- [License](#License)
 - [Features](#Features)
 - [Tests](#Tests)
 - [Roadmap](#Roadmap)
 - [Questions](#Questions)
+- [License](#License)
 
 ### Deployment URL
 This is a command-line application. It is not deployed online.
@@ -34,10 +34,11 @@ https://github.com/ahmadelgamal/ucb-README-generator
 1.  Answer the question prompts. 
 1.  Once completed, check the `output` folder for the `README.md` file. 
 1.  If you chose to add a gif animation/screenshot file, then please add it to a `./assets/images` folder in your app. 
-1.  If you chose to add a video demo, then please add it to a `./assets/videos` folder in your app.
+1.  If you chose to add a video demo, then please add it to a `./assets/videos` folder in your app. 
+1.  List items can be changed to numbers instead of bullets by changing the '`1. `' on line 76 of `generateMarkdown.js` to '`- `'
 
 ### Screenshot / Gif Animation
-![Screenshot / Gif Animation](./assets/images/screenshot.png)
+![Screenshot / Gif Animation](./assets/images/demo.gif)
 
 
 ## Technologies Used
@@ -48,14 +49,11 @@ https://github.com/ahmadelgamal/ucb-README-generator
 
 
 
-## License
-This project is licensed under the terms of the [MIT](https://opensource.org/licenses/MIT) license.
 
 ## Features
 1. This is an easy to use Command-Line Iinterface (CLI) app 
 1.  It uses the `inquirer` module to ask the user a series of questions. 
-1.  The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run. 
-1.  List items can be changed to numbers instead of bullets by changing the '`1. `' on line 76 of `generateMarkdown.js` to '`- `'
+1.  The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run.
 
 
 
@@ -72,3 +70,6 @@ This project is licensed under the terms of the [MIT](https://opensource.org/lic
 
 ## Questions
 Please send your questions and / or comments to **Ahmad El Gamal** at ahmadelgamal@gmail.com, or contact me on [GitHub](https://github.com/ahmadelgamal).
+
+## License
+This project is licensed under the terms of the [MIT](https://opensource.org/licenses/MIT) license.

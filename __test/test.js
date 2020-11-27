@@ -1,5 +1,8 @@
+const fs = require('fs');
 const sampleAnswers = require('./sample-answers');
 const generateMarkdown = require('../utils/generateMarkdown');
 const writeToFile = require('../utils/writeToFile');
 
-writeToFile('./__test/README.md', generateMarkdown(sampleAnswers));
+!fs.existsSync('output') && fs.mkdirSync('output');
+
+writeToFile('./output/README.md', generateMarkdown(sampleAnswers));

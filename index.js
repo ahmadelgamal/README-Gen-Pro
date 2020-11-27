@@ -1,3 +1,4 @@
+const fs = require('fs');
 const inquirer = require('inquirer');
 const writeToFile = require('./utils/writeToFile');
 const generateMarkdown = require('./utils/generateMarkdown');
@@ -64,7 +65,7 @@ const questions = [
   {
     type: 'input',
     name: 'installation',
-    message: "What is are the steps for installation (separate with '|')?",
+    message: "Please list the steps for installation (separate with '|')?",
     validate: userInput => {
       if (userInput) {
         return true;
@@ -77,7 +78,7 @@ const questions = [
   {
     type: 'input',
     name: 'usage',
-    message: "Please describe the usage information (separate with '|') (Required)",
+    message: "Please list the usage information (separate with '|') (Required)",
     validate: userInput => {
       if (userInput) {
         return true;
@@ -95,7 +96,7 @@ const questions = [
   {
     type: 'input',
     name: 'screenshot',
-    message: 'What is the filename of the app gif animation/screenshot, including the file extension (It must be placed in ./assets/images/)?',
+    message: 'What is the filename of the app gif animation/screenshot, including the file extension (Place it in ./assets/images/)?',
     when: function (userInput) {
       return userInput.confirmScreenshot;
     }
@@ -108,7 +109,7 @@ const questions = [
   {
     type: 'input',
     name: 'video',
-    message: 'What is the filename of the video demo file, including the file extension? It must be placed in `./assets/videos/`.',
+    message: 'What is the filename of the video demo file, including the file extension (Place it in ./assets/videos/)?',
     when: function (userInput) {
       return userInput.confirmVideo;
     }
@@ -134,23 +135,9 @@ const questions = [
   {
     type: 'input',
     name: 'collaborators',
-    message: "Please list collaborators (separate with '|'):",
+    message: "Please list the collaborators (separate with '|'):",
     when: function (userInput) {
       return userInput.confirmCollaborators;
-    }
-  },
-  {
-    type: 'confirm',
-    name: 'confirmLicense',
-    message: 'Would you like to include a license section?'
-  },
-  {
-    type: 'rawlist',
-    name: 'license',
-    message: 'Please select a license:',
-    choices: ['ISC', 'MIT', 'GNU GPL v3', 'Unlicense'],
-    when: function (userInput) {
-      return userInput.confirmLicense;
     }
   },
   {
@@ -187,7 +174,7 @@ const questions = [
   {
     type: 'input',
     name: 'tests',
-    message: "What are the test instructions (separate with '|')?",
+    message: "Please list the test instructions (separate with '|')?",
     when: function (userInput) {
       return userInput.confirmTests;
     }
@@ -243,6 +230,20 @@ const questions = [
         return false;
       }
     }
+  },
+  {
+    type: 'confirm',
+    name: 'confirmLicense',
+    message: 'Would you like to include a license section?'
+  },
+  {
+    type: 'rawlist',
+    name: 'license',
+    message: 'Please select a license:',
+    choices: ['ISC', 'MIT', 'GNU GPL v3', 'Unlicense'],
+    when: function (userInput) {
+      return userInput.confirmLicense;
+    }
   }
 ];
 
@@ -254,6 +255,7 @@ function init() {
       return generateMarkdown(answers);
     })
     .then(markdownData => {
+      !fs.existsSync('output') && fs.mkdirSync('output');
       return writeToFile('./output/README.md', markdownData);
     })
     .catch(error => {
