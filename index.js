@@ -64,6 +64,19 @@ const questions = [
   },
   {
     type: 'input',
+    name: 'features',
+    message: "What are the main features of the project (separate with '|')? (Required)",
+    validate: userInput => {
+      if (userInput) {
+        return true;
+      } else {
+        console.log('You need to enter the main features of the project!');
+        return false;
+      }
+    }
+  },
+  {
+    type: 'input',
     name: 'installation',
     message: "Please list the steps for installation (separate with '|')?",
     validate: userInput => {
@@ -138,19 +151,6 @@ const questions = [
     message: "Please list the collaborators (separate with '|'):",
     when: function (userInput) {
       return userInput.confirmCollaborators;
-    }
-  },
-  {
-    type: 'input',
-    name: 'features',
-    message: "What are the main features of the project (separate with '|')? (Required)",
-    validate: userInput => {
-      if (userInput) {
-        return true;
-      } else {
-        console.log('You need to enter the main features of the project!');
-        return false;
-      }
     }
   },
   {

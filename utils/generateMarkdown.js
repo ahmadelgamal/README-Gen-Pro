@@ -62,7 +62,7 @@ function generateLicenseBadge(data) {
     ISC: '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)',
     MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
     'GNU GPL v3': '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
-    UNLICENSE: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)',
+    Unlicense: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)',
   };
 
   const badgeLink = badgeObject[data.license];
@@ -70,13 +70,13 @@ function generateLicenseBadge(data) {
   return `${ badgeLink }`;
 }
 
-function generateBullets(data, sectionData) {
+function generateBullets(listType, sectionData) {
   if (sectionData) {
     sectionData = sectionData.split("|");
     let generatedSteps = ``;
     
     let listText = `1.`;
-    if (data.listType === 'Bullets')  {
+    if (listType === 'Bullets')  {
       listText = `-`;
     }
 
@@ -110,7 +110,7 @@ function generateVideo(data) {
 
 function generateCollaborators(data) {
   if (data.confirmCollaborators && data.collaborators) {
-    const renderCollaborators = generateBullets(data, data.collaborators);
+    const renderCollaborators = generateBullets(data.listType, data.collaborators);
     return `## Credits
 ### Collaborators
 ${ renderCollaborators }`;
@@ -121,7 +121,7 @@ ${ renderCollaborators }`;
 
 function generateContributing(data) {
   if (data.confirmContributing && data.contributing) {
-    const renderContributing = generateBullets(data, data.contributing);
+    const renderContributing = generateBullets(data.listType, data.contributing);
     return `## Contributing
 ${ renderContributing }`;
   } else {
@@ -131,7 +131,7 @@ ${ renderContributing }`;
 
 function generateTests(data) {
   if (data.confirmTests && data.tests) {
-    const renderTests = generateBullets(data, data.tests);
+    const renderTests = generateBullets(data.listType, data.tests);
     return `## Tests
 ${ renderTests }`;
   } else {
@@ -141,7 +141,7 @@ ${ renderTests }`;
 
 function generateRoadmap(data) {
   if (data.confirmRoadmap && data.roadmap) {
-    const renderRoadmap = generateBullets(data, data.roadmap);
+    const renderRoadmap = generateBullets(data.listType, data.roadmap);
     return `## Roadmap
 ${ renderRoadmap }`;
   } else {
@@ -150,18 +150,18 @@ ${ renderRoadmap }`;
 }
 
 function generateLicense(data) {
-  if (data.confirmLicense) {
+  if (data.confirmLicense && data.license) {
     const licenseObject = {
       ISC: 'https://opensource.org/licenses/ISC',
       MIT: 'https://opensource.org/licenses/MIT',
       'GNU GPL v3': 'https://www.gnu.org/licenses/gpl-3.0',
-      UNLICENSE: 'http://unlicense.org/'
+      Unlicense: 'http://unlicense.org/'
     };
 
     const licenseLink = licenseObject[data.license];
 
     return `## License
-This project is licensed under the terms of the[${ data.license }](${ licenseLink }) license.`;
+This project is licensed under the terms of the [${ data.license }](${ licenseLink }) license.`;
   } else {
     return ``;
   }
@@ -185,18 +185,18 @@ ${ data.deployment }
 ${ data.repo }
 
 ## Features
-${ generateBullets(data, data.features) }
+${ generateBullets(data.listType, data.features) }
 
 ## Installation
-${ generateBullets(data, data.installation) }
+${ generateBullets(data.listType, data.installation) }
 
 ## Usage
-${ generateBullets(data, data.usage) }
+${ generateBullets(data.listType, data.usage) }
 ${ generateScreenshot(data) }
 ${ generateVideo(data) }
 
 ## Technologies Used
-${ generateBullets(data, data.tech) }
+${ generateBullets(data.listType, data.tech) }
 
 ${ generateCollaborators(data) }
 
@@ -205,7 +205,7 @@ ${ generateTests(data) }
 ${ generateRoadmap(data) }
 
 ## Questions
-Please send your questions and / or comments to **${ data.name }** at ${ data.email }, or contact me on[GitHub](https://github.com/${data.username}).
+Please send your questions and / or comments to **${ data.name }** at ${ data.email }, or contact me on [GitHub](https://github.com/${data.username}).
 
 ${ generateLicense(data) }
 `;

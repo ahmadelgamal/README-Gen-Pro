@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-A command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package.
+README Gen Pro is a command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package.
 
 ## Table of Contents
 - [Deployment URL](#Deployment-URL)
@@ -21,10 +21,10 @@ A command-line application that dynamically generates a professional `README.md`
 This is a command-line application. It is not deployed online.
 
 ### Repo URL
-https://github.com/ahmadelgamal/ucb-README-generator
+https://github.com/ahmadelgamal/README-Gen-Pro
 
 ## Features
-1. This is an easy to use Command-Line application
+1. This is an easy to use Command-Line application.
 1. It uses the `inquirer` module to ask the user a series of questions.
 1. The answers are used to automatically generate a `README.md` file in an `output` directory/folder.
 
@@ -42,9 +42,9 @@ https://github.com/ahmadelgamal/ucb-README-generator
 1. If you chose to add a gif animation/screenshot file, then either add it to a `./assets/images` folder in your app, or change the relative path in the `README.md` file.
 1. If you chose to add a video demo, then either add it to a `./assets/videos` folder in your app, or change the relative path in the `README.md` file.
 
-### Screenshot / Gif Animation
-![Screenshot / Gif Animation](./assets/images/demo.gif)
 
+### Video
+![Video Demo](./assets/videos/demo.gif)
 
 ## Technologies Used
 1. JavaScript
@@ -68,7 +68,7 @@ https://github.com/ahmadelgamal/ucb-README-generator
 
 
 ## Questions
-Please send your questions and / or comments to **Ahmad El Gamal** at ahmadelgamal@gmail.com, or contact me on[GitHub](https://github.com/ahmadelgamal).
+Please send your questions and / or comments to **Ahmad El Gamal** at ahmadelgamal@gmail.com, or contact me on [GitHub](https://github.com/ahmadelgamal).
 
 ## License
-This project is licensed under the terms of the[MIT](https://opensource.org/licenses/MIT) license.
+This project is licensed under the terms of the [MIT](https://opensource.org/licenses/MIT) license.
