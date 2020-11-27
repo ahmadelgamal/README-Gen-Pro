@@ -244,6 +244,13 @@ const questions = [
     when: function (userInput) {
       return userInput.confirmLicense;
     }
+  },
+  {
+    type: 'rawlist',
+    name: 'listType',
+    message: 'Do you prefer numbers or bullets for your lists?',
+    choices: ['Numbers', 'Bullets'],
+    default: 'Numbers'
   }
 ];
 

@@ -4,14 +4,14 @@ module.exports = {
   confirmTOC: true,
   deployment: "This is a command-line application. It is not deployed online.",
   repo: "https://github.com/ahmadelgamal/ucb-README-generator",
+  features: "This is an easy to use Command-Line application | It uses the `inquirer` module to ask the user a series of questions. | The answers are used to automatically generate a `README.md` file in an `output` directory/folder.",
   installation: "Clone this repository. | Install modules: `npm install`.",
-  usage: "Go to the command line. | Run `node index.js` (or `npm start`). | Answer the question prompts. | Once completed, check the `output` folder for the `README.md` file. | If you chose to add a gif animation/screenshot file, then please add it to a `./assets/images` folder in your app. | If you chose to add a video demo, then please add it to a `./assets/videos` folder in your app. | List items can be changed to numbers instead of bullets by changing the '`1. `' on line 76 of `generateMarkdown.js` to '`- `'",
+  usage: "Go to the command line. | Run `node index.js` (or `npm start`). | Answer the question prompts. | Once completed, check the `output` folder for the `README.md` file. | If you chose to add a gif animation/screenshot file, then either add it to a `./assets/images` folder in your app, or change the relative path in the `README.md` file. | If you chose to add a video demo, then either add it to a `./assets/videos` folder in your app, or change the relative path in the `README.md` file.",
   confirmScreenshot: true,
   screenshot: "demo.gif",
   confirmVideo: false,
   tech: "JavaScript | Node.js | Inquirer.js | Markdown",
   confirmCollaborators: false,
-  features: "This is an easy to use Command-Line Iinterface (CLI) app | It uses the `inquirer` module to ask the user a series of questions. | The answers are used to automatically generate a `README.md` file in the same directory/folder where the app is run.",
   confirmContributing: false,
   confirmTests: true,
   tests: "Run the command `npm test` to generate a sample `README.md`. | You can change the test values by changing the values of the object in the `sample-answers.js` file, located in the `__test` folder.",
@@ -21,5 +21,6 @@ module.exports = {
   username: "ahmadelgamal",
   email: "ahmadelgamal@gmail.com",
   confirmLicense: true,
-  license: 'MIT'
+  license: 'MIT',
+  listType: 'Numbers'
 };

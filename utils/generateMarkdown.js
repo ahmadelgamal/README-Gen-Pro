@@ -3,20 +3,24 @@ function generateTOC(data) {
 
     let toc = `## Table of Contents
 - [Deployment URL](#Deployment-URL)
-- [Repo URL](#Repo-URL)
+- [Repo URL](#Repo-URL)`;
+
+    const features = `
+- [Features](#Features)`;
+    toc = toc.concat(features);
+    
+    const moreTOC = `
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Technologies Used](#Technologies-Used)`;
+    toc = toc.concat(moreTOC);
+
 
     const collaborators = `
 - [Credits](#Credits)`;
     if (data.confirmCollaborators) {
       toc = toc.concat(collaborators);
     }
-
-    const features = `
-- [Features](#Features)`;
-    toc = toc.concat(features);
 
     const contributing = `
 - [Contributing](#Contributing)`;
@@ -39,7 +43,6 @@ function generateTOC(data) {
     const questions = `
 - [Questions](#Questions)`;
     toc = toc.concat(questions);
-
 
     const license = `
 - [License](#License)`;
@@ -64,17 +67,22 @@ function generateLicenseBadge(data) {
 
   const badgeLink = badgeObject[data.license];
 
-  return `${badgeLink}`;
+  return `${ badgeLink }`;
 }
 
-function generateBullets(data) {
-  if(data) {
-    data = data.split("|");
-    let generatedSteps = "";
+function generateBullets(data, sectionData) {
+  if (sectionData) {
+    sectionData = sectionData.split("|");
+    let generatedSteps = ``;
     
-    for (let i = 0; i < data.length; i++) {
-      // can change the '1. ' to '- ' to convert to bullet-list instead of number-list
-      const nextStep = `1. ${data[i]}
+    let listText = `1.`;
+    if (data.listType === 'Bullets')  {
+      listText = `-`;
+    }
+
+    for (let i = 0; i < sectionData.length; i++) {
+      sectionData[i] = sectionData[i].trim();
+      const nextStep = `${ listText } ${ sectionData[i] }
 `;
       generatedSteps = generatedSteps.concat(nextStep);
     }
@@ -85,7 +93,7 @@ function generateBullets(data) {
 function generateScreenshot(data) {
   if (data.confirmScreenshot) {
     return `### Screenshot / Gif Animation
-![Screenshot / Gif Animation](./assets/images/${data.screenshot})`;
+![Screenshot / Gif Animation](./assets/images/${ data.screenshot })`;
   } else {
     return ``;
   }
@@ -94,7 +102,7 @@ function generateScreenshot(data) {
 function generateVideo(data) {
   if (data.confirmVideo) {
     return `### Video
-![Video Demo](./assets/videos/${data.video})`;
+![Video Demo](./assets/videos/${ data.video })`;
   } else {
     return ``;
   }
@@ -102,10 +110,10 @@ function generateVideo(data) {
 
 function generateCollaborators(data) {
   if (data.confirmCollaborators && data.collaborators) {
-    const renderCollaborators = generateBullets(data.collaborators);
+    const renderCollaborators = generateBullets(data, data.collaborators);
     return `## Credits
 ### Collaborators
-${renderCollaborators}`;
+${ renderCollaborators }`;
   } else {
     return ``;
   }
@@ -113,9 +121,9 @@ ${renderCollaborators}`;
 
 function generateContributing(data) {
   if (data.confirmContributing && data.contributing) {
-    const renderContributing = generateBullets(data.contributing);
+    const renderContributing = generateBullets(data, data.contributing);
     return `## Contributing
-${renderContributing}`;
+${ renderContributing }`;
   } else {
     return ``;
   }
@@ -123,9 +131,9 @@ ${renderContributing}`;
 
 function generateTests(data) {
   if (data.confirmTests && data.tests) {
-    const renderTests = generateBullets(data.tests);
+    const renderTests = generateBullets(data, data.tests);
     return `## Tests
-${renderTests}`;
+${ renderTests }`;
   } else {
     return ``;
   }
@@ -133,9 +141,9 @@ ${renderTests}`;
 
 function generateRoadmap(data) {
   if (data.confirmRoadmap && data.roadmap) {
-    const renderRoadmap = generateBullets(data.roadmap);
+    const renderRoadmap = generateBullets(data, data.roadmap);
     return `## Roadmap
-${renderRoadmap}`;
+${ renderRoadmap }`;
   } else {
     return ``;
   }
@@ -143,7 +151,6 @@ ${renderRoadmap}`;
 
 function generateLicense(data) {
   if (data.confirmLicense) {
-
     const licenseObject = {
       ISC: 'https://opensource.org/licenses/ISC',
       MIT: 'https://opensource.org/licenses/MIT',
@@ -154,7 +161,7 @@ function generateLicense(data) {
     const licenseLink = licenseObject[data.license];
 
     return `## License
-This project is licensed under the terms of the [${data.license}](${licenseLink}) license.`;
+This project is licensed under the terms of the[${ data.license }](${ licenseLink }) license.`;
   } else {
     return ``;
   }
@@ -162,45 +169,45 @@ This project is licensed under the terms of the [${data.license}](${licenseLink}
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${ data.title }
 
-${generateLicenseBadge(data)}
+${ generateLicenseBadge(data) }
 
 ## Description
-${data.description}
+${ data.description }
 
-${generateTOC(data)}
+${ generateTOC(data) }
 
 ### Deployment URL
-${data.deployment}
+${ data.deployment }
 
 ### Repo URL
-${data.repo}
-
-## Installation
-${generateBullets(data.installation)}
-
-## Usage
-${generateBullets(data.usage)}
-${generateScreenshot(data)}
-${generateVideo(data)}
-
-## Technologies Used
-${generateBullets(data.tech)}
-
-${generateCollaborators(data)}
+${ data.repo }
 
 ## Features
-${generateBullets(data.features)}
+${ generateBullets(data, data.features) }
 
-${generateContributing(data)}
-${generateTests(data)}
-${generateRoadmap(data)}
+## Installation
+${ generateBullets(data, data.installation) }
+
+## Usage
+${ generateBullets(data, data.usage) }
+${ generateScreenshot(data) }
+${ generateVideo(data) }
+
+## Technologies Used
+${ generateBullets(data, data.tech) }
+
+${ generateCollaborators(data) }
+
+${ generateContributing(data) }
+${ generateTests(data) }
+${ generateRoadmap(data) }
 
 ## Questions
-Please send your questions and / or comments to **${data.name}** at ${data.email}, or contact me on [GitHub](https://github.com/${data.username}).
+Please send your questions and / or comments to **${ data.name }** at ${ data.email }, or contact me on[GitHub](https://github.com/${data.username}).
 
-${generateLicense(data)}
+${ generateLicense(data) }
 `;
 }
 
