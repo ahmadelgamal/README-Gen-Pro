@@ -182,10 +182,10 @@ function generateMarkdown(data) {
   return `# ${ data.title }
 
 ${ generateLicenseBadge(data) }
-![GitHub repo size](https://img.shields.io/github/repo-size/${data.username}/repository?style=plastic)
-![GitHub language count](https://img.shields.io/github/languages/count/${data.username}/repository?style=plastic)
-![GitHub top language](https://img.shields.io/github/languages/top/${data.username}/repository?style=plastic)
-![GitHub last commit](https://img.shields.io/github/last-commit/${data.username}/repository?color=red&style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/${data.username}/${repository}?style=plastic)
+![GitHub language count](https://img.shields.io/github/languages/count/${data.username}/${repository}?style=plastic)
+![GitHub top language](https://img.shields.io/github/languages/top/${data.username}/${repository}?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/${data.username}/${repository}?color=red&style=plastic)
 
 ## Description
 ${ data.description }
