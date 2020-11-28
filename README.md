@@ -1,10 +1,10 @@
 # README Gen Pro
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub repo size](https://img.shields.io/github/repo-size/USER/REPOSITORY?style=plastic)
-![GitHub language count](https://img.shields.io/github/languages/count/USER/REPOSITORY?style=plastic)
-![GitHub top language](https://img.shields.io/github/languages/top/USER/REPOSITORY?style=plastic)
-![GitHub last commit](https://img.shields.io/github/last-commit/USER/REPOSITORY?color=red&style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/ahmadelgamal/README-Gen-Pro?style=plastic)
+![GitHub language count](https://img.shields.io/github/languages/count/ahmadelgamal/README-Gen-Pro?style=plastic)
+![GitHub top language](https://img.shields.io/github/languages/top/ahmadelgamal/README-Gen-Pro?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/ahmadelgamal/README-Gen-Pro?color=red&style=plastic)
 
 ## Description
 README Gen Pro is a command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package.
