@@ -4,7 +4,7 @@
   "description": "A command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.",
   "main": "index.js",
   "scripts": {
-    "test": "node ./__test/test.js",
+    "test": "node ./__test__/test.js",
     "start": "node index.js"
   },
   "repository": {
