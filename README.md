@@ -1,5 +1,6 @@
 # README Gen Pro
 
+
 ![GitHub repo size](https://img.shields.io/github/repo-size/ahmadelgamal/README-Gen-Pro?style=plastic)
 ![GitHub code size](https://img.shields.io/github/languages/code-size/ahmadelgamal/README-Gen-Pro?style=plastic)
 ![GitHub language count](https://img.shields.io/github/languages/count/ahmadelgamal/README-Gen-Pro?style=plastic)
@@ -17,6 +18,7 @@
 ![GitHub followers](https://img.shields.io/github/followers/ahmadelgamal?style=social)
 
 ![GitHub version](https://img.shields.io/github/package-json/v/ahmadelgamal/README-Gen-Pro?color=red&style=plastic)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
@@ -47,7 +49,9 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 
 
 ## Installation
-1. Clone this repository.
+1. Download or Clone this repository.
+1. If you downloaded the zipped version of this repo, then unzip it in the desired directory.
+1. Change directory to `README-Gen-Pro`.
 1. Install modules: `npm install`.
 
 

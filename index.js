@@ -52,7 +52,7 @@ const questions = [
   {
     type: 'input',
     name: 'repo',
-    message: 'What is the Repo link (URL)? (Required)',
+    message: 'What is the Repo link (Please enter the full URL, such as: https://github.com/ahmadelgamal/README-Gen-Pro)? (Required)',
     validate: userInput => {
       if (userInput) {
         return true;

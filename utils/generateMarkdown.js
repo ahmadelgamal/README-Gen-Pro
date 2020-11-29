@@ -1,3 +1,44 @@
+function getRepoName(repository) {
+  let valid = true;
+  //Gets repo name for badges
+  repository = repository.slice(19);
+  if (repository.split('/') !== 'undefined' && repository !== '') {
+    repository = repository.split('/');
+    repository = repository[1];
+  }
+  if (repository === 'undefined' ||  repository === '') {
+    console.log('Error. Repo not found. Please check your Repo URL input!');
+    valid = false;
+  }
+  return [repository, valid];
+}
+
+function generateBadges(data, repository, valid) {
+  if(valid) {
+    return `
+![GitHub repo size](https://img.shields.io/github/repo-size/${data.username}/${repository}?style=plastic)
+![GitHub code size](https://img.shields.io/github/languages/code-size/${data.username}/${repository}?style=plastic)
+![GitHub language count](https://img.shields.io/github/languages/count/${data.username}/${repository}?style=plastic)
+![GitHub top language](https://img.shields.io/github/languages/top/${data.username}/${repository}?style=plastic)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/${data.username}/${repository}?style=plastic)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/${data.username}/${repository}?color=green&style=plastic)
+![GitHub open pull requests](https://img.shields.io/github/issues-pr-raw/${data.username}/${repository}?color=red&style=plastic)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/${data.username}/${repository}?color=green&style=plastic)
+![GitHub open issues](https://img.shields.io/github/issues-raw/${data.username}/${repository}?color=red&style=plastic)
+
+![GitHub stars](https://img.shields.io/github/stars/${data.username}/${repository}?style=social)
+![GitHub forks](https://img.shields.io/github/forks/${data.username}/${repository}?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/${data.username}/${repository}?style=social)
+![GitHub followers](https://img.shields.io/github/followers/${data.username}?style=social)
+
+![GitHub version](https://img.shields.io/github/package-json/v/${data.username}/${repository}?color=red&style=plastic)
+`;
+  } else {
+    return ``;
+  }
+}
+
 function generateTOC(data) {
   if (data.confirmTOC) {
 
@@ -170,32 +211,14 @@ This project is licensed under the terms of the [${ data.license }](${ licenseLi
 // function to generate markdown for README
 function generateMarkdown(data) {
   
-  //Gets repo name for badges
-  let repository = data.repo;
-  repository = repository.split('https://github.com/');
-  repository = repository[1];
-  repository = repository.split('/');
-  repository = repository[1];
+  // the following 3 lines are used for generating the badges
+  const repoArray = getRepoName(data.repo);
+  const repository = repoArray[0];
+  const valid = repoArray[1];
 
   return `# ${ data.title }
 
-![GitHub repo size](https://img.shields.io/github/repo-size/${data.username}/${repository}?style=plastic)
-![GitHub code size](https://img.shields.io/github/languages/code-size/${data.username}/${repository}?style=plastic)
-![GitHub language count](https://img.shields.io/github/languages/count/${data.username}/${repository}?style=plastic)
-![GitHub top language](https://img.shields.io/github/languages/top/${data.username}/${repository}?style=plastic)
-
-![GitHub last commit](https://img.shields.io/github/last-commit/${data.username}/${repository}?style=plastic)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/${data.username}/${repository}?color=green&style=plastic)
-![GitHub open pull requests](https://img.shields.io/github/issues-pr-raw/${data.username}/${repository}?color=red&style=plastic)
-![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/${data.username}/${repository}?color=green&style=plastic)
-![GitHub open issues](https://img.shields.io/github/issues-raw/${data.username}/${repository}?color=red&style=plastic)
-
-![GitHub stars](https://img.shields.io/github/stars/${data.username}/${repository}?style=social)
-![GitHub forks](https://img.shields.io/github/forks/${data.username}/${repository}?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/${data.username}/${repository}?style=social)
-![GitHub followers](https://img.shields.io/github/followers/${data.username}?style=social)
-
-![GitHub version](https://img.shields.io/github/package-json/v/${data.username}/${repository}?color=red&style=plastic)
+${ generateBadges(data, repository, valid) }
 ${ generateLicenseBadge(data) }
 
 ## Description
