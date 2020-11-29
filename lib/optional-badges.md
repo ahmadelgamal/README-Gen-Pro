@@ -1,0 +1,5 @@
+![GitHub all contributors](https://img.shields.io/github/all-contributors/${data.username}/${repository}?style=plastic)
+![GitHub release date](https://img.shields.io/github/release-date/${data.username}/${repository}?style=plastic)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/${data.username}/${repository}?style=plastic)
+![Github license from package-json](https://img.shields.io/github/license/${data.username}/${repository}?style=plastic)
+![w3c html validation](https://img.shields.io/w3c-validation/html?preset=HTML%2C%20SVG%201.1%2C%20MathML%203.0&targetUrl=https%3A%2F%2Fvalidator.nu%2F)
