@@ -5,21 +5,22 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/ahmadelgamal/README-Gen-Pro?style=plastic)
 ![GitHub top language](https://img.shields.io/github/languages/top/ahmadelgamal/README-Gen-Pro?style=plastic)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/ahmadelgamal/README-Gen-Pro?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/ahmadelgamal/README-Gen-Pro?color=blue&style=plastic)
 ![GitHub clsoed pull requests](https://img.shields.io/github/issues-pr-closed-raw/ahmadelgamal/README-Gen-Pro?color=green&style=plastic)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/ahmadelgamal/README-Gen-Pro?color=red&style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/ahmadelgamal/README-Gen-Pro?color=red&style=plastic)
 
 
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/ahmadelgamal/README-Gen-Pro?color=green&style=plastic)
 ![GitHub open issues](https://img.shields.io/github/issues-raw/ahmadelgamal/README-Gen-Pro?color=red&style=plastic)
+![w3c html validation](https://img.shields.io/w3c-validation/html?preset=HTML%2C%20SVG%201.1%2C%20MathML%203.0&targetUrl=https%3A%2F%2Fvalidator.nu%2F)
 
 ![GitHub stars](https://img.shields.io/github/stars/ahmadelgamal/README-Gen-Pro?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/ahmadelgamal/README-Gen-Pro?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/ahmadelgamal/README-Gen-Pro?style=social)
 ![GitHub followers](https://img.shields.io/github/followers/ahmadelgamal?style=social)
 
+![GitHub open issues](https://img.shields.io/github/package-json/v/ahmadelgamal/README-Gen-Pro?color=red&style=plastic)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![w3c html validation](https://img.shields.io/w3c-validation/html?preset=HTML%2C%20SVG%201.1%2C%20MathML%203.0&targetUrl=https%3A%2F%2Fvalidator.nu%2F)
 
 ## Description
 README Gen Pro is a command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package.
