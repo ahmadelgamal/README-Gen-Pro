@@ -169,11 +169,9 @@ This project is licensed under the terms of the [${ data.license }](${ licenseLi
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-  // const repository = data[repo].split("https://github.com/");
   
   //Gets repo name for badges
   let repository = data.repo;
-  let username = data.username;
   repository = repository.split('https://github.com/');
   repository = repository[1];
   repository = repository.split('/');
@@ -186,6 +184,11 @@ ${ generateLicenseBadge(data) }
 ![GitHub language count](https://img.shields.io/github/languages/count/${data.username}/${repository}?style=plastic)
 ![GitHub top language](https://img.shields.io/github/languages/top/${data.username}/${repository}?style=plastic)
 ![GitHub last commit](https://img.shields.io/github/last-commit/${data.username}/${repository}?color=red&style=plastic)
+
+![GitHub stars](https://img.shields.io/github/stars/${data.username}/${repository}?style=social)
+![GitHub forks](https://img.shields.io/github/forks/${data.username}/${repository}?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/${data.username}/${repository}?style=social)
+![GitHub followers](https://img.shields.io/github/followers/${data.username}?style=social)
 
 ## Description
 ${ data.description }

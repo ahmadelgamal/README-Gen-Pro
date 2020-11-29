@@ -6,6 +6,11 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/ahmadelgamal/README-Gen-Pro?style=plastic)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ahmadelgamal/README-Gen-Pro?color=red&style=plastic)
 
+![GitHub stars](https://img.shields.io/github/stars/ahmadelgamal/README-Gen-Pro?style=social)
+![GitHub forks](https://img.shields.io/github/forks/ahmadelgamal/README-Gen-Pro?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/ahmadelgamal/README-Gen-Pro?style=social)
+![GitHub followers](https://img.shields.io/github/followers/ahmadelgamal?style=social)
+
 ## Description
 README Gen Pro is a command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package.
 
@@ -67,7 +72,6 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 
 ## Roadmap
 1. Add more license options.
-1. Add support for more badges.
 1. Add autocomplete.
 1. Add trim() to user input.
 

@@ -17,7 +17,7 @@ module.exports = {
   confirmTests: true,
   tests: "Run the command `npm test` to generate a sample `README.md`. | You can change the test values by changing the values of the object in the `sample-answers.js` file, located in the `__test` folder.",
   confirmRoadmap: true,
-  roadmap: "Add more license options. | Add support for more badges. | Add autocomplete. | Add trim() to user input.",
+  roadmap: "Add more license options. | Add autocomplete. | Add trim() to user input.",
   name: "Ahmad El Gamal",
   username: "ahmadelgamal",
   email: "ahmadelgamal@gmail.com",
