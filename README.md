@@ -62,12 +62,11 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 1. Answer the question prompts.
 1. Once completed, check the `output` folder for the `README.md` file.
 1. If you chose to add a gif animation/screenshot file, then either add it to a `./assets/images` folder in your app, or change the relative path in the `README.md` file.
-1. If you chose to add a video demo, then either add it to a `./assets/videos` folder in your app, or change the relative path in the `README.md` file.
 
 ### Screenshot / Gif Animation
 ![Screenshot / Gif Animation](./assets/images/output.gif)
 ### Video
-[Video Demo](https://youtu.be/rEZoblXSlMg){:target="_blank"}
+[Video Demo](https://youtu.be/rEZoblXSlMg)
 
 ## Technologies Used
 1. JavaScript
