@@ -51,8 +51,9 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 ## Installation
 1. Download or Clone this repository.
 1. If you downloaded the zipped version of this repo, then unzip it in the desired directory.
-1. Change directory to `README-Gen-Pro`.
-1. Install modules: `npm install`.
+1. Go to the command line (if you're not there already).
+1. Change the directory to `README-Gen-Pro`.
+1. Run: `npm install` to install the `inquirer` module.
 
 
 ## Usage
@@ -66,7 +67,7 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 ### Screenshot / Gif Animation
 ![Screenshot / Gif Animation](./assets/images/output.gif)
 ### Video
-![Video Demo](./assets/videos/input.gif)
+[Video Demo](https://youtu.be/rEZoblXSlMg)
 
 ## Technologies Used
 1. JavaScript

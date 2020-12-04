@@ -117,12 +117,12 @@ const questions = [
   {
     type: 'confirm',
     name: 'confirmVideo',
-    message: 'Would you like to include a video demo?'
+    message: 'Would you like to include a link to a video demo?'
   },
   {
     type: 'input',
     name: 'video',
-    message: 'What is the filename of the video demo file, including the file extension (Place it in ./assets/videos/)?',
+    message: 'Please copy the link to the video url and paste it here:',
     when: function (userInput) {
       return userInput.confirmVideo;
     }

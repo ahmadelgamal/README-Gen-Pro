@@ -143,7 +143,7 @@ function generateScreenshot(data) {
 function generateVideo(data) {
   if (data.confirmVideo) {
     return `### Video
-![Video Demo](./assets/videos/${ data.video })`;
+[Video Demo](${ data.video })`;
   } else {
     return ``;
   }
