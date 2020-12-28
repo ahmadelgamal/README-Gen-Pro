@@ -1,6 +1,5 @@
 # README Gen Pro
 
-
 ![GitHub repo size](https://img.shields.io/github/repo-size/ahmadelgamal/README-Gen-Pro?style=plastic)
 ![GitHub code size](https://img.shields.io/github/languages/code-size/ahmadelgamal/README-Gen-Pro?style=plastic)
 ![GitHub language count](https://img.shields.io/github/languages/count/ahmadelgamal/README-Gen-Pro?style=plastic)
@@ -22,12 +21,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-README Gen Pro is a command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package.
+README Gen Pro is a command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package. (This README file was generated using this app!)
 
 ## Table of Contents
 - [Deployment URL](#Deployment-URL)
 - [Repo URL](#Repo-URL)
 - [Features](#Features)
+- [Pre-Requisites](#Pre-Requisites)
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Technologies Used](#Technologies-Used)
@@ -47,6 +47,10 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 1. It uses the `inquirer` module to ask the user a series of questions.
 1. The answers are used to automatically generate a `README.md` file in an `output` directory/folder.
 
+## Pre-Requisites
+1. Install `node.js`.
+1. Install `MongoDB`.
+1. Install an API Client.
 
 ## Installation
 1. Download or Clone this repository.
@@ -54,7 +58,6 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 1. Go to the command line (if you're not there already).
 1. Change the directory to `README-Gen-Pro`.
 1. Run: `npm install` to install the `inquirer` module.
-
 
 ## Usage
 1. Go to the command line.
@@ -65,16 +68,15 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 
 ### Screenshot / Gif Animation
 ![Screenshot / Gif Animation](./assets/images/output.gif)
-### Video
-[Video Demo](https://youtu.be/rEZoblXSlMg)
+
+### Video Demo
+[Video Link](https://youtu.be/rEZoblXSlMg)
 
 ## Technologies Used
 1. JavaScript
 1. Node.js
 1. Inquirer.js
 1. Markdown
-
-
 
 
 
@@ -86,7 +88,6 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 1. Add more license options.
 1. Add autocomplete.
 1. Add trim() to user input.
-
 
 ## Questions
 Please send your questions and / or comments to **Ahmad El Gamal** at ahmadelgamal@gmail.com, or contact me on [GitHub](https://github.com/ahmadelgamal).

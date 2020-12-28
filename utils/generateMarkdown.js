@@ -233,7 +233,6 @@ function generateMarkdown(data) {
   const valid = repoArray[1];
 
   return `# ${data.title}
-
 ${generateBadges(data, repository, valid)}
 ${generateLicenseBadge(data)}
 
@@ -250,26 +249,21 @@ ${data.repo}
 
 ## Features
 ${generateBullets(data.listType, data.features)}
-
 ${generatePreRequisites(data)}
-
 ## Installation
 ${generateBullets(data.listType, data.installation)}
-
 ## Usage
 ${generateBullets(data.listType, data.usage)}
 ${generateScreenshot(data)}
+
 ${generateVideo(data)}
 
 ## Technologies Used
 ${generateBullets(data.listType, data.tech)}
-
 ${generateCollaborators(data)}
-
 ${generateContributing(data)}
 ${generateTests(data)}
 ${generateRoadmap(data)}
-
 ## Questions
 Please send your questions and / or comments to **${data.name}** at ${data.email}, or contact me on [GitHub](https://github.com/${data.username}).
 
