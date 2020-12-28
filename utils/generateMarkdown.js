@@ -50,6 +50,12 @@ function generateTOC(data) {
 - [Features](#Features)`;
     toc = toc.concat(features);
 
+    const preReqs = `
+- [Pre-Requisites](#Pre-Requisites)`;
+    if (data.confirmPreReq) {
+      toc = toc.concat(preReqs);
+    }
+
     const moreTOC = `
 - [Installation](#Installation)
 - [Usage](#Usage)
