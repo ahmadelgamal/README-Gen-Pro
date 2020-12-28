@@ -43,7 +43,7 @@ This is a command-line application. It is not deployed online.
 https://github.com/ahmadelgamal/README-Gen-Pro
 
 ## Features
-1. This is an easy to use Command-Line application.
+1. This is an easy to use command-line application.
 1. It uses the `inquirer` module to ask the user a series of questions.
 1. The answers are used to automatically generate a `README.md` file in an `output` directory/folder.
 
@@ -54,11 +54,12 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 1. Download or Clone this repository.
 1. If you downloaded the zipped version of this repo, then unzip it in the desired directory.
 1. Go to the command line (if you're not there already).
-1. Change the directory to `README-Gen-Pro`.
+1. Change the directory to `README-Gen-Pro-main` (or `README-Gen-Pro` depending on the name of the installed directory).
 1. Run: `npm install` to install the `inquirer` module.
 
 ## Usage
 1. Go to the command line.
+1. Navigate to the app directory.
 1. Run `node index.js` (or `npm start`).
 1. Answer the question prompts.
 1. Once completed, check the `output` folder for the `README.md` file.
@@ -79,13 +80,13 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 
 
 ## Tests
-1. Run the command `npm test` to generate a sample `README.md`.
-1. You can change the test values by changing the values of the object in the `sample-answers.js` file, located in the `__test__` folder.
+1. Run the command `npm test` to generate a sample `README.md` from sample answers saved in the object in the `sample-answers.js` file in the `__test__` directory.
+1. You can change the generated `README.md` values by changing the values of the object in the `sample-answers.js` file.
 
 ## Roadmap
 1. Add more license options.
 1. Add autocomplete.
-1. Add trim() to user input.
+1. Add `trim()` to user input.
 
 ## Questions
 Please send your questions and / or comments to **Ahmad El Gamal** at ahmadelgamal@gmail.com, or contact me on [GitHub](https://github.com/ahmadelgamal).
