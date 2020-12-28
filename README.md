@@ -80,7 +80,7 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 
 ## Tests
 1. Run the command `npm test` to generate a sample `README.md`.
-1. You can change the test values by changing the values of the object in the `sample-answers.js` file, located in the `__test` folder.
+1. You can change the test values by changing the values of the object in the `sample-answers.js` file, located in the `__test__` folder.
 
 ## Roadmap
 1. Add more license options.
