@@ -49,8 +49,6 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 
 ## Pre-Requisites
 1. Install `node.js`.
-1. Install `MongoDB`.
-1. Install an API Client.
 
 ## Installation
 1. Download or Clone this repository.

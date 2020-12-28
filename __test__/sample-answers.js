@@ -6,7 +6,7 @@ module.exports = {
   repo: "https://github.com/ahmadelgamal/README-Gen-Pro",
   features: "This is an easy to use Command-Line application. | It uses the `inquirer` module to ask the user a series of questions. | The answers are used to automatically generate a `README.md` file in an `output` directory/folder.",
   confirmPreReq: true,
-  preReq: "Install `node.js`. | Install `MongoDB`. | Install an API Client.",
+  preReq: "Install `node.js`.",
   installation: "Download or Clone this repository. | If you downloaded the zipped version of this repo, then unzip it in the desired directory. | Go to the command line (if you're not there already). | Change the directory to `README-Gen-Pro`. | Run: `npm install` to install the `inquirer` module.",
   usage: "Go to the command line. | Run `node index.js` (or `npm start`). | Answer the question prompts. | Once completed, check the `output` folder for the `README.md` file. | If you chose to add a gif animation/screenshot file, then either add it to a `./assets/images` folder in your app, or change the relative path in the `README.md` file.",
   confirmScreenshot: true,
