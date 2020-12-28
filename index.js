@@ -114,12 +114,12 @@ const questions = [
   {
     type: 'confirm',
     name: 'confirmScreenshot',
-    message: 'Would you like to include a gif animation/screenshot of the app?'
+    message: 'Would you like to include a gif animation or png screenshot of the app?'
   },
   {
     type: 'input',
     name: 'screenshot',
-    message: 'What is the filename of the app gif animation/screenshot, including the file extension (Place it in ./assets/images/)?',
+    message: 'What is the filename of the app gif animation or png screenshot, including the file extension (Place it in ./assets/images/)?',
     when: function (userInput) {
       return userInput.confirmScreenshot;
     }

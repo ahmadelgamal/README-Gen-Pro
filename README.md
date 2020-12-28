@@ -21,7 +21,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-README Gen Pro is a command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package. (This README file was generated using this app!)
+README Gen Pro is a command-line application that dynamically generates a professional `README.md` file from a user's input using the `inquirer.js` package. (This `README.md` file was generated using this app!)
 
 ## Table of Contents
 - [Deployment URL](#Deployment-URL)
@@ -45,7 +45,7 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 ## Features
 1. This is an easy to use command-line application.
 1. It uses the `inquirer` module to ask the user a series of questions.
-1. The answers are used to automatically generate a `README.md` file in an `output` directory/folder.
+1. The answers are used to automatically generate a `README.md` file in an `output` directory.
 
 ## Pre-Requisites
 1. Install `node.js`.
@@ -63,7 +63,7 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 1. Run `node index.js` (or `npm start`).
 1. Answer the question prompts.
 1. Once completed, check the `output` folder for the `README.md` file.
-1. If you chose to add a gif animation/screenshot file, then either add it to a `./assets/images` folder in your app, or change the relative path in the `README.md` file.
+1. If you chose to add a `gif` animation or `png` screenshot file, then either add it to a `./assets/images` folder in your app, or change the relative path in the `README.md` file to point to the corresponding folder.
 
 ### Screenshot / Gif Animation
 ![Screenshot / Gif Animation](./assets/images/screenshot.gif)

@@ -1,6 +1,6 @@
 {
   "name": "ucb-readme-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.",
   "main": "index.js",
   "scripts": {
