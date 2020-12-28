@@ -69,7 +69,7 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 ![Screenshot / Gif Animation](./assets/images/screenshot.gif)
 
 ### Video Demo
-[Video Link](https://youtu.be/rEZoblXSlMg)
+[Video Link](https://youtu.be/m_VdwJC_dhU)
 
 ## Technologies Used
 1. JavaScript
