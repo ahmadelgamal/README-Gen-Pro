@@ -65,7 +65,7 @@ https://github.com/ahmadelgamal/README-Gen-Pro
 1. If you chose to add a gif animation/screenshot file, then either add it to a `./assets/images` folder in your app, or change the relative path in the `README.md` file.
 
 ### Screenshot / Gif Animation
-![Screenshot / Gif Animation](./assets/images/output.gif)
+![Screenshot / Gif Animation](./assets/images/screenshot.gif)
 
 ### Video Demo
 [Video Link](https://youtu.be/rEZoblXSlMg)
