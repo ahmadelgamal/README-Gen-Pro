@@ -6,7 +6,7 @@ function getRepoName(repository) {
     repository = repository.split('/');
     repository = repository[1];
   }
-  if (repository === 'undefined' ||  repository === '') {
+  if (repository === 'undefined' || repository === '') {
     console.log('Error. Repo not found. Please check your Repo URL input!');
     valid = false;
   }
@@ -14,7 +14,7 @@ function getRepoName(repository) {
 }
 
 function generateBadges(data, repository, valid) {
-  if(valid) {
+  if (valid) {
     return `
 ![GitHub repo size](https://img.shields.io/github/repo-size/${data.username}/${repository}?style=plastic)
 ![GitHub code size](https://img.shields.io/github/languages/code-size/${data.username}/${repository}?style=plastic)
@@ -49,7 +49,7 @@ function generateTOC(data) {
     const features = `
 - [Features](#Features)`;
     toc = toc.concat(features);
-    
+
     const moreTOC = `
 - [Installation](#Installation)
 - [Usage](#Usage)
@@ -108,22 +108,22 @@ function generateLicenseBadge(data) {
 
   const badgeLink = badgeObject[data.license];
 
-  return `${ badgeLink }`;
+  return `${badgeLink}`;
 }
 
 function generateBullets(listType, sectionData) {
   if (sectionData) {
     sectionData = sectionData.split("|");
     let generatedSteps = ``;
-    
+
     let listText = `1.`;
-    if (listType === 'Bullets')  {
+    if (listType === 'Bullets') {
       listText = `-`;
     }
 
     for (let i = 0; i < sectionData.length; i++) {
       sectionData[i] = sectionData[i].trim();
-      const nextStep = `${ listText } ${ sectionData[i] }
+      const nextStep = `${listText} ${sectionData[i]}
 `;
       generatedSteps = generatedSteps.concat(nextStep);
     }
@@ -131,10 +131,20 @@ function generateBullets(listType, sectionData) {
   } else return ``;
 }
 
+function generatePreRequisites(data) {
+  if (data.confirmPreReq && data.preReq) {
+    const renderPreReq = generateBullets(data.listType, data.preReq);
+    return `## Pre-Requisites
+${renderPreReq}`;
+  } else {
+    return ``;
+  }
+}
+
 function generateScreenshot(data) {
   if (data.confirmScreenshot) {
     return `### Screenshot / Gif Animation
-![Screenshot / Gif Animation](./assets/images/${ data.screenshot })`;
+![Screenshot / Gif Animation](./assets/images/${data.screenshot})`;
   } else {
     return ``;
   }
@@ -142,8 +152,8 @@ function generateScreenshot(data) {
 
 function generateVideo(data) {
   if (data.confirmVideo) {
-    return `### Video
-[Video Demo](${ data.video })`;
+    return `### Video Demo
+[Video Link](${data.video})`;
   } else {
     return ``;
   }
@@ -154,7 +164,7 @@ function generateCollaborators(data) {
     const renderCollaborators = generateBullets(data.listType, data.collaborators);
     return `## Credits
 ### Collaborators
-${ renderCollaborators }`;
+${renderCollaborators}`;
   } else {
     return ``;
   }
@@ -164,7 +174,7 @@ function generateContributing(data) {
   if (data.confirmContributing && data.contributing) {
     const renderContributing = generateBullets(data.listType, data.contributing);
     return `## Contributing
-${ renderContributing }`;
+${renderContributing}`;
   } else {
     return ``;
   }
@@ -174,7 +184,7 @@ function generateTests(data) {
   if (data.confirmTests && data.tests) {
     const renderTests = generateBullets(data.listType, data.tests);
     return `## Tests
-${ renderTests }`;
+${renderTests}`;
   } else {
     return ``;
   }
@@ -184,7 +194,7 @@ function generateRoadmap(data) {
   if (data.confirmRoadmap && data.roadmap) {
     const renderRoadmap = generateBullets(data.listType, data.roadmap);
     return `## Roadmap
-${ renderRoadmap }`;
+${renderRoadmap}`;
   } else {
     return ``;
   }
@@ -202,7 +212,7 @@ function generateLicense(data) {
     const licenseLink = licenseObject[data.license];
 
     return `## License
-This project is licensed under the terms of the [${ data.license }](${ licenseLink }) license.`;
+This project is licensed under the terms of the [${data.license}](${licenseLink}) license.`;
   } else {
     return ``;
   }
@@ -210,52 +220,54 @@ This project is licensed under the terms of the [${ data.license }](${ licenseLi
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-  
+
   // the following 3 lines are used for generating the badges
   const repoArray = getRepoName(data.repo);
   const repository = repoArray[0];
   const valid = repoArray[1];
 
-  return `# ${ data.title }
+  return `# ${data.title}
 
-${ generateBadges(data, repository, valid) }
-${ generateLicenseBadge(data) }
+${generateBadges(data, repository, valid)}
+${generateLicenseBadge(data)}
 
 ## Description
-${ data.description }
+${data.description}
 
-${ generateTOC(data) }
+${generateTOC(data)}
 
 ### Deployment URL
-${ data.deployment }
+${data.deployment}
 
 ### Repo URL
-${ data.repo }
+${data.repo}
 
 ## Features
-${ generateBullets(data.listType, data.features) }
+${generateBullets(data.listType, data.features)}
+
+${generatePreRequisites(data)}
 
 ## Installation
-${ generateBullets(data.listType, data.installation) }
+${generateBullets(data.listType, data.installation)}
 
 ## Usage
-${ generateBullets(data.listType, data.usage) }
-${ generateScreenshot(data) }
-${ generateVideo(data) }
+${generateBullets(data.listType, data.usage)}
+${generateScreenshot(data)}
+${generateVideo(data)}
 
 ## Technologies Used
-${ generateBullets(data.listType, data.tech) }
+${generateBullets(data.listType, data.tech)}
 
-${ generateCollaborators(data) }
+${generateCollaborators(data)}
 
-${ generateContributing(data) }
-${ generateTests(data) }
-${ generateRoadmap(data) }
+${generateContributing(data)}
+${generateTests(data)}
+${generateRoadmap(data)}
 
 ## Questions
-Please send your questions and / or comments to **${ data.name }** at ${ data.email }, or contact me on [GitHub](https://github.com/${data.username}).
+Please send your questions and / or comments to **${data.name}** at ${data.email}, or contact me on [GitHub](https://github.com/${data.username}).
 
-${ generateLicense(data) }
+${generateLicense(data)}
 `;
 }
 

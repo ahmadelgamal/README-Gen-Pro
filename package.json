@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./__test__/test.js",
+    "seed": "node ./__seed__/seed.js",
     "start": "node index.js"
   },
   "repository": {
