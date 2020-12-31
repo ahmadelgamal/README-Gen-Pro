@@ -147,6 +147,16 @@ ${renderPreReq}`;
   }
 }
 
+function generateCloning(data) {
+  if (data.confirmCloning && data.preReq) {
+    const renderCloning = generateBullets(data.listType, data.cloning);
+    return `## Cloning
+${renderCloning}`;
+  } else {
+    return ``;
+  }
+}
+
 function generateScreenshot(data) {
   if (data.confirmScreenshot) {
     return `### Screenshot / Gif Animation
@@ -252,6 +262,7 @@ ${generateBullets(data.listType, data.features)}
 ${generatePreRequisites(data)}
 ## Installation
 ${generateBullets(data.listType, data.installation)}
+${generateCloning(data)}
 ## Usage
 ${generateBullets(data.listType, data.usage)}
 ${generateScreenshot(data)}

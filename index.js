@@ -88,15 +88,25 @@ const questions = [
   {
     type: 'input',
     name: 'installation',
-    message: "Please list the steps for installation: (separate with '|') (Required)",
+    message: "Please list the installation steps: (separate with '|') (Required)",
     validate: userInput => {
       if (userInput) {
         return true;
       } else {
-        console.log('You need to enter the steps for installation!');
+        console.log('You need to enter the installation steps!');
         return false;
       }
     }
+  },
+  {
+    type: 'confirm',
+    name: 'confirmCloning',
+    message: 'Would you like to add a Cloning section?'
+  },
+  {
+    type: 'input',
+    name: 'cloning',
+    message: "Please list the cloning steps: (separate with '|')"
   },
   {
     type: 'input',
@@ -153,7 +163,7 @@ const questions = [
   {
     type: 'confirm',
     name: 'confirmCollaborators',
-    message: 'Would you like to include a collaborators section?'
+    message: 'Would you like to include a Collaborators section?'
   },
   {
     type: 'input',
@@ -166,7 +176,7 @@ const questions = [
   {
     type: 'confirm',
     name: 'confirmContributing',
-    message: 'Would you like to include a contributing section?'
+    message: 'Would you like to include a Contributing section?'
   },
   {
     type: 'input',
@@ -179,7 +189,7 @@ const questions = [
   {
     type: 'confirm',
     name: 'confirmTests',
-    message: 'Would you like to include a tests section?'
+    message: 'Would you like to include a Tests section?'
   },
   {
     type: 'input',
@@ -192,7 +202,7 @@ const questions = [
   {
     type: 'confirm',
     name: 'confirmRoadmap',
-    message: 'Would you like to include a roadmap section?'
+    message: 'Would you like to include a Roadmap section?'
   },
   {
     type: 'input',
@@ -244,7 +254,7 @@ const questions = [
   {
     type: 'confirm',
     name: 'confirmLicense',
-    message: 'Would you like to include a license section?'
+    message: 'Would you like to include a License section?'
   },
   {
     type: 'rawlist',
